@@ -8,8 +8,19 @@ namespace Assets.Scripts
     abstract class Decision : MonoBehaviour
     {
         public Decision NextDecision;
-        public WheatController Wheat;
+        public WheatController Controller;
 
-        public abstract void Decide(SelectedAnswer answer);
+        public bool ActiveOnStart = false;
+
+        public virtual void Decide(SelectedAnswer answer)
+        {
+            gameObject.SetActive(false);
+            NextDecision?.gameObject.SetActive(true);
+        }
+
+        public void Start()
+        {
+            gameObject.SetActive(ActiveOnStart);
+        }
     }
 }

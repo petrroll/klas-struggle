@@ -7,9 +7,15 @@ namespace Assets.Scripts
         public Decision Decision;
         public SelectedAnswer SelectedAnswer;
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public KeyCode AnswerKey = KeyCode.LeftArrow;
+
+        public void OnCollisionEnter2D(Collision2D collision) => Decision.Decide(SelectedAnswer);
+        public void Update()
         {
-            Decision.Decide(SelectedAnswer);
+            if (Input.GetKeyDown(AnswerKey))
+            {
+                Decision.Decide(SelectedAnswer);
+            }
         }
     }
 }

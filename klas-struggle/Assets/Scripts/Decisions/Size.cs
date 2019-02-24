@@ -4,7 +4,8 @@
     {
         public override void Decide(SelectedAnswer answer)
         {
-            Wheat.Size = (answer == SelectedAnswer.A) ? 10 : 5;
+            Controller.Size = (answer == SelectedAnswer.A) ? 10 : 5;
+            base.Decide(answer);
         }
 
     }

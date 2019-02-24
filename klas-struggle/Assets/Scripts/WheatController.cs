@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class WheatController : MonoBehaviour
 {
-    public int Size;
+    private int _size;
+    public int Size
+    {
+        get { return _size; }
+        set { _size = value; transform.localScale = new Vector3(_size, _size); }
+    }
+
+    private Vector3 _position;
+    public Vector3 Position
+    {
+        get { return _position; }
+        set { _position = value; transform.localPosition = _position; }
+    }
 
     // Start is called before the first frame update
     void Start()
