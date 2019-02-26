@@ -1,13 +1,16 @@
-﻿namespace Assets.Scripts.Decisions
+﻿using UnityEngine;
+
+namespace Assets.Scripts.Decisions
 {
-    class Size : Decision
+    class PositionDec : Decision
     {
         public override void Decide(int questionID, int selectedAnswerID)
         {
-            Controller.Size = (selectedAnswerID == 0) ? 10 : 5;
+            Controller.Position = (selectedAnswerID == 0) ? new Vector3(0, 5) : new Vector3(0, -5);
             base.Decide(questionID, selectedAnswerID);
         }
 
         protected override bool Verify(Stage stage) => true;
+
     }
 }
