@@ -4,23 +4,26 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public enum SelectedAnswer { A, B}
     abstract class Decision : MonoBehaviour
     {
-        public Decision NextDecision;
-        public WheatController Controller;
+        internal WheatController Controller;
+        internal Stage CurrentStage;
 
-        public bool ActiveOnStart = false;
-
-        public virtual void Decide(SelectedAnswer answer)
+        public virtual void Decide(int questionID, int selectedAnswerID)
         {
-            gameObject.SetActive(false);
-            NextDecision?.gameObject.SetActive(true);
+            Debug.Assert(CurrentStage != null && Controller != null, "Stage not initialized");
+            CurrentStage.FinishStage();
         }
 
-        public void Start()
+
+        public void Init(Stage stage, WheatController controller)
         {
-            gameObject.SetActive(ActiveOnStart);
+            this.CurrentStage = stage;
+            this.Controller = controller;
+
+            Debug.Assert(Verify(CurrentStage), "Unable to verify decision.");
         }
+
+        protected abstract bool Verify(Stage stage);
     }
 }

@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 843873890}
   - component: {fileID: 843873896}
-  - component: {fileID: 843873895}
   - component: {fileID: 843873894}
   - component: {fileID: 843873893}
   - component: {fileID: 843873892}
@@ -403,21 +402,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &843873895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843873889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0e83ff6a3de00408639edf4181abf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Decision: {fileID: 1278319845}
-  SelectedAnswer: 1
-  AnswerKey: 275
 --- !u!61 &843873896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -661,7 +645,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1016424323}
   - component: {fileID: 1016424329}
-  - component: {fileID: 1016424328}
   - component: {fileID: 1016424327}
   - component: {fileID: 1016424326}
   - component: {fileID: 1016424325}
@@ -860,21 +843,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1016424328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016424322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0e83ff6a3de00408639edf4181abf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Decision: {fileID: 1278319845}
-  SelectedAnswer: 0
-  AnswerKey: 276
 --- !u!61 &1016424329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1003,7 +971,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1277486531}
   - component: {fileID: 1277486533}
-  - component: {fileID: 1277486532}
   - component: {fileID: 1277486537}
   - component: {fileID: 1277486536}
   - component: {fileID: 1277486535}
@@ -1034,21 +1001,6 @@ RectTransform:
   m_AnchoredPosition: {x: 4.95, y: -1.49}
   m_SizeDelta: {x: 5, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1277486532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277486530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0e83ff6a3de00408639edf4181abf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Decision: {fileID: 1553682966}
-  SelectedAnswer: 1
-  AnswerKey: 275
 --- !u!61 &1277486533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1252,7 +1204,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1278319846}
-  - component: {fileID: 1278319845}
   m_Layer: 0
   m_Name: LocationDecision
   m_TagString: Untagged
@@ -1260,21 +1211,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1278319845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1278319844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91d8e4b1a0f10f4cb0b25d2c4bc60f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextDecision: {fileID: 0}
-  Controller: {fileID: 1078746120}
-  ActiveOnStart: 0
 --- !u!4 &1278319846
 Transform:
   m_ObjectHideFlags: 0
@@ -1508,7 +1444,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1553682967}
-  - component: {fileID: 1553682966}
   m_Layer: 0
   m_Name: SizeDecision
   m_TagString: Untagged
@@ -1516,21 +1451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1553682966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553682965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5c95f5761bd40f4581fc3a2031ebc7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextDecision: {fileID: 1278319845}
-  Controller: {fileID: 1078746120}
-  ActiveOnStart: 1
 --- !u!4 &1553682967
 Transform:
   m_ObjectHideFlags: 0
@@ -1558,7 +1478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1782620082}
   - component: {fileID: 1782620084}
-  - component: {fileID: 1782620083}
   - component: {fileID: 1782620088}
   - component: {fileID: 1782620087}
   - component: {fileID: 1782620086}
@@ -1589,21 +1508,6 @@ RectTransform:
   m_AnchoredPosition: {x: -4.83, y: -1.62}
   m_SizeDelta: {x: 5, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1782620083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782620081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0e83ff6a3de00408639edf4181abf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Decision: {fileID: 1553682966}
-  SelectedAnswer: 0
-  AnswerKey: 276
 --- !u!61 &1782620084
 BoxCollider2D:
   m_ObjectHideFlags: 0
