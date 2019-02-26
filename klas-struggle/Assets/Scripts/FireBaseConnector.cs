@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts;
 using SimpleFirebaseUnity;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,21 +11,54 @@ public class FireBaseConnector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Controller.State = DataStorage.DS.State;
+        Controller.State = DataStorage.DS.State ?? new WheatState();
+        Controller.State.Size *= 0.5f;
         Controller.ApplyState();
 
-        Firebase firebase = Firebase.CreateNew("https://klas-struggle.firebaseio.com", Secrets.FirebaseAPIKey);
-        var database = firebase.Child("asdf", true); // get's a child that can have OnSuccess / OnFail callbacks set
-        //database.SetValue("asdr", false);          // always operates with the whole sub-graph get/set/push
-        database.Push("asdf");
+        var state = Controller.State;
+        var result = JsonUtility.ToJson(state);
 
-        database.OnGetSuccess += onSuccess;
-        database.GetValue();
+        Firebase firebase = Firebase.CreateNew("https://klas-struggle.firebaseio.com", Secrets.FirebaseAPIKey);
+        var textNodeV1 = firebase.Child("checkTestV1", true); // get's a child that can have OnSuccess / OnFail callbacks set
+
+        textNodeV1.Push(result);
+
+        textNodeV1.OnGetSuccess += onSuccess;
+        textNodeV1.GetValue();
     }
 
-    private void onSuccess(Firebase arg1, DataSnapshot arg2)
+    void onSuccess(Firebase node, DataSnapshot data)
     {
-        Debug.Log(arg2.RawValue);
+        var rawDictOfJsonStates = data.RawValue;
+        List<WheatState> states = ParseDictOfRetrievedJsonStates<WheatState>(rawDictOfJsonStates);
+
+        foreach(var state in states)
+        {
+            var newInstace = Instantiate(Controller, new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-3, 3), 0), Quaternion.identity);
+            newInstace.State = state;
+            newInstace.State.Size *= 0.5f;
+            newInstace.ApplyState();
+        }
+    }
+
+    static List<T> ParseDictOfRetrievedJsonStates<T>(object rawDictOfJsonStates)
+    {
+        List<T> states = new List<T>();
+        if (rawDictOfJsonStates is Dictionary<string, object> dictOfJsonStates)
+        {
+            foreach (var rawJsonState in dictOfJsonStates)
+            {
+                if (rawJsonState.Value is string jsonState)
+                {
+                    states.Add(JsonUtility.FromJson<T>(jsonState));
+                }
+                else { Debug.Assert(false, "Json deser error"); }
+
+            }
+        }
+        else { Debug.Assert(false, "Json deser error"); }
+
+        return states;
     }
 
     // Update is called once per frame
