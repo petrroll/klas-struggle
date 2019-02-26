@@ -7,9 +7,14 @@ using UnityEngine;
 
 public class FireBaseConnector : MonoBehaviour
 {
+    public WheatController Controller;
+
     // Start is called before the first frame update
     void Start()
     {
+        Controller.State = DataStorage.DS.State;
+        Controller.ApplyState();
+
         Firebase firebase = Firebase.CreateNew("https://klas-struggle.firebaseio.com", Secrets.FirebaseAPIKey);
         var database = firebase.Child("asdf", true); // get's a child that can have OnSuccess / OnFail callbacks set
         //database.SetValue("asdr", false);          // always operates with the whole sub-graph get/set/push

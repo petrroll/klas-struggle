@@ -6,7 +6,7 @@ namespace Assets.Scripts
 {
     abstract class Decision : MonoBehaviour
     {
-        internal Stage CurrentStage;
+        internal QuestionStage CurrentStage;
 
         public virtual void Decide(Answer answer)
         {
@@ -17,13 +17,13 @@ namespace Assets.Scripts
         }
 
 
-        public void Init(Stage stage)
+        public void Init(QuestionStage stage)
         {
             this.CurrentStage = stage;
 
             Debug.Assert(Verify(CurrentStage), "Unable to verify decision.");
         }
 
-        protected virtual bool Verify(Stage stage) => true;
+        protected virtual bool Verify(QuestionStage stage) => true;
     }
 }

@@ -21,7 +21,7 @@ namespace Assets.Scripts.StageDecisions
             base.Decide(answer);
         }
 
-        protected override bool Verify(Stage stage)
+        protected override bool Verify(QuestionStage stage)
         {
             // verifies the number of replacements equals to number of all potential answers
             if (stage.Questions.Length != Replacements.Count) { return false; }

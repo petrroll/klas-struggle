@@ -16,6 +16,6 @@ namespace Assets.Scripts.StageDecisions
             base.Decide(answer);
         }
 
-        protected override bool Verify(Stage stage) => true;
+        protected override bool Verify(QuestionStage stage) => true;
     }
 }

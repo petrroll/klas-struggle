@@ -43,6 +43,14 @@ public class WheatController : MonoBehaviour
         }
     }
 
+    public void ApplyState()
+    {
+        ApplySize();
+        ApplyCheckMarks();
+        ApplyDropDowns();
+    }
+
+
     void SetActiveObject(List<GameObject> objects, int activeObject)
     {
         for (int i = 0; i < objects.Count; i++)
@@ -53,9 +61,7 @@ public class WheatController : MonoBehaviour
 
     void Start()
     {
-        ApplySize();
-        ApplyCheckMarks();
-        ApplyDropDowns();
+        ApplyState();
     }
 
     void ApplySize()

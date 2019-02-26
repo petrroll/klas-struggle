@@ -9,9 +9,9 @@ namespace Assets.Scripts
 
         // Id identifying current question within a stage & its stage.
         internal int Id = -1;
-        internal Stage Stage;
+        internal QuestionStage Stage;
 
-        public void Init(Stage stage, int questionID, Decision dec)
+        public void Init(QuestionStage stage, int questionID, Decision dec)
         {
             gameObject.SetActive(false);
 
