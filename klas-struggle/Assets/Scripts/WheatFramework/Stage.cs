@@ -11,9 +11,9 @@ namespace Assets.Scripts
     {
         public bool ActiveOnStart = false;
         internal Question[] Questions;
+        internal Decision Decision;
 
         public WheatController Controller;
-        public Decision Decision;
         public Stage NextStage;
 
         public void ActivateStage()
@@ -51,6 +51,8 @@ namespace Assets.Scripts
 
         private void Init()
         {
+            Decision = GetComponent<Decision>();
+
             Debug.Assert(Decision != null);
             Debug.Assert(Controller != null);
 
