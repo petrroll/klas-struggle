@@ -10,11 +10,13 @@ namespace Assets.Scripts
     class Stage : MonoBehaviour
     {
         public bool ActiveOnStart = false;
+        public Stage NextStage;
+
         internal Question[] Questions;
+
         internal Decision Decision;
 
-        public WheatController Controller;
-        public Stage NextStage;
+        internal int Id { get; private set; }
 
         public void ActivateStage()
         {
@@ -40,21 +42,13 @@ namespace Assets.Scripts
             NextStage?.ActivateStage();
         }
 
-        public void Start()
-        {
-            Init();
 
-            // Potentially activate a question from current stage
-            if (!ActiveOnStart) { gameObject.SetActive(false); }
-            else { ActivateStage(); }
-        }
-
-        private void Init()
+        internal void Init(int stageId)
         {
+            this.Id = stageId;
+
             Decision = GetComponent<Decision>();
-
             Debug.Assert(Decision != null);
-            Debug.Assert(Controller != null);
 
             // assumes the order of retrieved components is the same as the order in Editor
             Questions = GetComponentsInChildren<Question>(true);
@@ -62,11 +56,15 @@ namespace Assets.Scripts
             // Initialize questions & subsequently their answers 
             for (int i = 0; i < Questions.Length; i++)
             {
-                Questions[i].Init(i, Decision);
+                Questions[i].Init(this, i, Decision);
             }
 
             // Initialize decision
-            Decision.Init(this, Controller);
+            Decision.Init(this);
+
+            // Potentially activate a question from current stage
+            if (!ActiveOnStart) { gameObject.SetActive(false); }
+            else { ActivateStage(); }
         }
     }
 }

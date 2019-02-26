@@ -7,21 +7,21 @@ namespace Assets.Scripts
     {
         internal Answer[] Answers;
 
-        // Id identifying current question within a stage & its decision script, set by stage.
-        internal int QuestionID = -1;
-        internal Decision Decision;
+        // Id identifying current question within a stage & its stage.
+        internal int Id = -1;
+        internal Stage Stage;
 
-        public void Init(int questionID, Decision dec)
+        public void Init(Stage stage, int questionID, Decision dec)
         {
             gameObject.SetActive(false);
 
-            QuestionID = questionID;
-            Decision = dec;
+            Id = questionID;
+            Stage = stage;
 
-            InitAnswers();
+            InitAnswers(dec);
         }
 
-        private void InitAnswers()
+        private void InitAnswers(Decision dec)
         {
             // assumes the order of retrieved components is the same as the order in Editor
             Answers = GetComponentsInChildren<Answer>(true);
@@ -29,7 +29,7 @@ namespace Assets.Scripts
             // Inits ids of all answers, must be called only after QuestionID and Decision has already been itialized.
             for (int i = 0; i < Answers.Length; i++)
             {
-                Answers[i].Init(QuestionID, i, Decision);
+                Answers[i].Init(this, i, dec);
             }
         }
     }

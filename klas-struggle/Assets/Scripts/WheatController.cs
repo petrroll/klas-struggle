@@ -1,32 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
+
+[System.Serializable]
+public class WheatState
+{
+    public float Size = 2.5f;
+}
 
 public class WheatController : MonoBehaviour
 {
-    private int _size;
-    public int Size
+    public WheatState State = new WheatState();
+
+    private void ApplySize()
     {
-        get { return _size; }
-        set { _size = value; transform.localScale = new Vector3(_size, _size); }
+        transform.localScale = new Vector3(State.Size, State.Size);
     }
 
-    private Vector3 _position;
-    public Vector3 Position
+    internal void ApplyDecision(Answer answer)
     {
-        get { return _position; }
-        set { _position = value; transform.localPosition = _position; }
+        if(answer.Question.Stage.Id == 0)
+        {
+            State.Size = answer.Id == 0 ? 5 : 10;
+            ApplySize();
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ApplySize();
     }
 }

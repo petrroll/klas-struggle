@@ -7,9 +7,9 @@ namespace Assets.Scripts
         // decision script assigned to this answer (inherited from stage -> question)
         internal Decision Decision;
 
-        // Ids that identifies the answer within its decision script, set by Question
-        internal int QuestionId = -1;
-        internal int AnswerId = -1;
+        // Id that identifies the answer within current question and question.
+        internal int Id = -1;
+        internal Question Question;
 
         internal KeyCode AnswerKey;
 
@@ -22,12 +22,12 @@ namespace Assets.Scripts
             }
         }
 
-        public void Init(int questionID, int answerID, Decision dec)
+        public void Init(Question question, int answerID, Decision dec)
         {
             Debug.Assert(dec != null);
 
-            QuestionId = questionID;
-            AnswerId = answerID;
+            Question = question;
+            Id = answerID;
 
             Decision = dec;
             InitAnswerKey(answerID);
@@ -36,8 +36,8 @@ namespace Assets.Scripts
 
         private void SelectCurrentAnswer()
         {
-            Debug.Assert(QuestionId != -1 && AnswerId != -1, $"Answers selected but not initialized Q:{QuestionId}, A:{AnswerId}.");
-            Decision.Decide(QuestionId, AnswerId);
+            Debug.Assert(Question.Id != -1 && Id != -1, $"Answers selected but not initialized Q:{Question.Id}, A:{Id}.");
+            Decision.Decide(this);
         }
 
         private void InitAnswerKey(int answerID)

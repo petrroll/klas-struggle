@@ -6,25 +6,24 @@ namespace Assets.Scripts
 {
     abstract class Decision : MonoBehaviour
     {
-        internal WheatController Controller;
         internal Stage CurrentStage;
 
-        public virtual void Decide(int questionID, int selectedAnswerID)
+        public virtual void Decide(Answer answer)
         {
-            Debug.Assert(CurrentStage != null && Controller != null, "Stage not initialized");
-            Debug.Log($"Decision: Q:{questionID}|A:{selectedAnswerID}");
+            Debug.Assert(CurrentStage != null, "Stage not initialized");
+            Debug.Log($"Decision: S:{answer.Question.Stage.Id}|Q:{answer.Question.Id}|A:{answer.Id}");
+
             CurrentStage.FinishStage();
         }
 
 
-        public void Init(Stage stage, WheatController controller)
+        public void Init(Stage stage)
         {
             this.CurrentStage = stage;
-            this.Controller = controller;
 
             Debug.Assert(Verify(CurrentStage), "Unable to verify decision.");
         }
 
-        protected abstract bool Verify(Stage stage);
+        protected virtual bool Verify(Stage stage) => true;
     }
 }
