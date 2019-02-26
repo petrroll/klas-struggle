@@ -5,14 +5,16 @@ namespace Assets.Scripts
 {
     class Question : MonoBehaviour
     {
-        public List<Answer> Answers;
+        internal Answer[] Answers;
 
         // Id identifying current question within a stage & its decision script, set by stage.
         internal int QuestionID = -1;
-        internal Decision Decision = null;
+        internal Decision Decision;
 
         public void Init(int questionID, Decision dec)
         {
+            gameObject.SetActive(false);
+
             QuestionID = questionID;
             Decision = dec;
 
@@ -21,17 +23,14 @@ namespace Assets.Scripts
 
         private void InitAnswers()
         {
+            // assumes the order of retrieved components is the same as the order in Editor
+            Answers = GetComponentsInChildren<Answer>(true);
+
             // Inits ids of all answers, must be called only after QuestionID and Decision has already been itialized.
-            for (int i = 0; i < Answers.Count; i++)
+            for (int i = 0; i < Answers.Length; i++)
             {
                 Answers[i].Init(QuestionID, i, Decision);
             }
-
-            Debug.Assert(VerifyAnswersAssignment(), $"Not all answers in Q:{QuestionID} have been assigned.");
         }
-
-        // Verify all children answers have been asigned to Answers array (naively, just checks counts)
-        private bool VerifyAnswersAssignment() => Answers.Count == GetComponentsInChildren<Answer>().Length;
-
     }
 }

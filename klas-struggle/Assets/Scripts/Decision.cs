@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public virtual void Decide(int questionID, int selectedAnswerID)
         {
             Debug.Assert(CurrentStage != null && Controller != null, "Stage not initialized");
+            Debug.Log($"Decision: Q:{questionID}|A:{selectedAnswerID}");
             CurrentStage.FinishStage();
         }
 

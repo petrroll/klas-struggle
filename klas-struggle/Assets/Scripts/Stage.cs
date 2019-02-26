@@ -10,22 +10,22 @@ namespace Assets.Scripts
     class Stage : MonoBehaviour
     {
         public bool ActiveOnStart = false;
+        internal Question[] Questions;
 
-        public List<Question> Questions;
         public WheatController Controller;
-        public Decision Dec;
+        public Decision Decision;
         public Stage NextStage;
 
         public void ActivateStage()
         {
-            Debug.Assert(Questions.Count > 0);
+            Debug.Assert(Questions.Length > 0);
 
             // activate current stage object
             this.gameObject.SetActive(true);
             
             // Randomly select a question (question) from current stage and activate it's gameObject (answers, ...)
             {
-                int i = UnityEngine.Random.Range(0, Questions.Count - 1);
+                int i = UnityEngine.Random.Range(0, Questions.Length);
                 var selectedDecisions = Questions[i];
 
                 selectedDecisions.gameObject.SetActive(true);
@@ -51,23 +51,20 @@ namespace Assets.Scripts
 
         private void Init()
         {
-            Debug.Assert(Dec != null);
+            Debug.Assert(Decision != null);
             Debug.Assert(Controller != null);
 
+            // assumes the order of retrieved components is the same as the order in Editor
+            Questions = GetComponentsInChildren<Question>(true);
+
             // Initialize questions & subsequently their answers 
-            for (int i = 0; i < Questions.Count; i++)
+            for (int i = 0; i < Questions.Length; i++)
             {
-                Questions[i].Init(i, Dec);
+                Questions[i].Init(i, Decision);
             }
 
             // Initialize decision
-            Dec.Init(this, Controller);
-
-            Debug.Assert(VerifyQuestionsAssignment(), $"Not all questions in current stage have been assigned.");
+            Decision.Init(this, Controller);
         }
-
-        // Verify all children questions have been asigned to Questions array (naively, just checks counts)
-        private bool VerifyQuestionsAssignment() => Questions.Count == GetComponentsInChildren<Question>().Length;
-
     }
 }
