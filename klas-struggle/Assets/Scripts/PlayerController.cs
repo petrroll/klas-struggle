@@ -38,6 +38,7 @@ namespace Assets.Scripts
             followComp.enabled = false;
             Camera.orthographicSize = 10;
 
+            GenWheat.SaveLoc();
             await Connector.PushStateAsync(GenWheat.State);
         }
 

@@ -11,6 +11,7 @@ public class WheatState
     public int DropDowns = 1;
 
     public float Size = 2.5f;
+    public Vector3 Loc;
 }
 
 public class WheatController : MonoBehaviour
@@ -50,6 +51,7 @@ public class WheatController : MonoBehaviour
         ApplySize();
         ApplyCheckMarks();
         ApplyDropDowns();
+        ApplyLoc();
     }
 
 
@@ -90,5 +92,16 @@ public class WheatController : MonoBehaviour
     {
         SetActiveObject(DropDowns, State.DropDowns);
     }
+
+    private void ApplyLoc()
+    {
+        gameObject.transform.localPosition = State.Loc;
+    }
+
+    public void SaveLoc()
+    {
+        State.Loc = gameObject.transform.localPosition;
+    }
+
 
 }
