@@ -23,7 +23,7 @@ public class FireBaseConnector : MonoBehaviour
         PlayerWheat.ApplyState();
 
         // init firebase connection
-        Firebase firebase = Firebase.CreateNew("https://klas-struggle.firebaseio.com", Secrets.FirebaseAPIKey);
+        Firebase firebase = Firebase.CreateNew(Secrets.FirebaseURL, Secrets.FirebaseAPIKey);
         var textNodeV1 = firebase.Child("checkTestV1", true); // get's a child that can have OnSuccess / OnFail callbacks set
 
         RetrieveAndInstantiateOtherStates(textNodeV1);

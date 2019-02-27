@@ -8,7 +8,8 @@ namespace Assets.Scripts
 {
     static class Secrets
     {
-        public const string FirebaseAPIKey = "AIzaSyDMVo4jBxw2TFoIWMqA9PIgFH4swQf1Di8";
+        public const string FirebaseAPIKey = "<>";
+        public const string FirebaseURL = "<>";
     }
 
 }
