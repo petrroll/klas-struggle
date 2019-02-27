@@ -2,90 +2,54 @@
 using SimpleFirebaseUnity;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class FireBaseConnector : MonoBehaviour
 {
-    public WheatController PlayerWheat;
-    public WheatController Prefab;
+    private bool _inited = false;
+    private Firebase fbRoot;
 
-    public bool LoadOtherInstances = true;
-    public bool SaveCurrentInstance = true;
-
-    // Start -> retrieveAndInstantiateOtherStates -> DataRetrieved -> PushCurrentState -> PushSuccess
-
-    // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
-        // init generated instance
-        PlayerWheat.State = DataStorage.DS.State ?? new WheatState();
-        PlayerWheat.State.Size *= 0.5f;
-        PlayerWheat.ApplyState();
+       if(_inited) { return; }
+        _inited = true;
 
-        // init firebase connection
-        Firebase firebase = Firebase.CreateNew(Secrets.FirebaseURL, Secrets.FirebaseAPIKey);
-        var textNodeV1 = firebase.Child("checkTestV1", true); // get's a child that can have OnSuccess / OnFail callbacks set
-
-        RetrieveAndInstantiateOtherStates(textNodeV1);
+        fbRoot = Firebase.CreateNew(Secrets.FirebaseURL, Secrets.FirebaseAPIKey);
     }
 
-    private void RetrieveAndInstantiateOtherStates(Firebase textNodeV1)
+    public Task<(Firebase, DataSnapshot)> PushStateAsync(WheatState state)
     {
-        // if !LoadOtherInstances skip loading and move to push immediately
-        if (!LoadOtherInstances) { PushCurrentState(textNodeV1); return; }
-
-        // retrieve instances from firebase
-        textNodeV1.OnGetSuccess += DataRetrieved;
-        textNodeV1.OnGetFailed += (Firebase fireBase, FirebaseError error) => Debug.Log($"Error retrieving data from firebase: {error.Message}");
-
-        textNodeV1.GetValue();
-    }
-
-    private void PushCurrentState(Firebase textNodeV1)
-    {
-        // if !LoadOtherInstances skip pushing
-        if (!SaveCurrentInstance) { return; }
-
-        // push generated instance to firebase
-        var state = PlayerWheat.State;
+        Init();
+        var fbNode = fbRoot.Child("v1");
         var result = JsonUtility.ToJson(state);
 
-        textNodeV1.OnPushSuccess += PushSuccess;
-        textNodeV1.OnPushFailed += (Firebase fireBase, FirebaseError error) => Debug.Log($"Error pushing data to firebase: {error.Message}");
-        textNodeV1.Push(result);
+        var taskCompletionSource = new TaskCompletionSource<(Firebase, DataSnapshot)>();
+
+        fbNode.OnPushSuccess += (Firebase node, DataSnapshot pushedKeyInfo) => { taskCompletionSource.SetResult((node, pushedKeyInfo)); }; ;
+        fbNode.OnPushFailed += (Firebase fireBase, FirebaseError error) => { Debug.Log($"Error pushing data to firebase: {error.Message}"); taskCompletionSource.SetResult((fireBase, null)); };
+        fbNode.Push(result);
+
+        return taskCompletionSource.Task;
     }
 
-    private void PushSuccess(Firebase node, DataSnapshot pushedKeyInfo)
+    public Task<List<WheatState>> GetStatesAsync()
     {
-        Debug.Log($"Push successful.");
-    }
+        Init();
+        var fbNode = fbRoot.Child("v1");
 
-    void DataRetrieved(Firebase node, DataSnapshot data)
-    {
-        // parse retrieved states and instantiate them as game objects
-        List<WheatState> states = ParseDictOfRetrievedJsonStates<WheatState>(data.RawValue);
-        Debug.Log($"Retrieved & instantiated {states.Count} states.");
-
-        foreach(var state in states)
+        var taskCompletionSource = new TaskCompletionSource<List<WheatState>>();
+        fbNode.OnGetFailed += (Firebase fireBase, FirebaseError error) => { Debug.Log($"Error getting data from firebase: {error.Message}"); taskCompletionSource.SetResult(new List<WheatState>()); };
+        fbNode.OnGetSuccess += (Firebase node, DataSnapshot dta) =>
         {
-            InstantiateNewElement(state);
-        }
+            List<WheatState> states = ParseDictOfRetrievedJsonStates<WheatState>(dta.RawValue);
+            taskCompletionSource.SetResult(states);
+        };
 
-        PushCurrentState(node);
-    }
+        fbNode.GetValue();
+        return taskCompletionSource.Task;
 
-    private void InstantiateNewElement(WheatState state)
-    {
-        // instantiate one object based on its state
-        Vector3 location = new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-3, 3), 0);
 
-        var newInstace = Instantiate(Prefab, location, Quaternion.identity);
-        newInstace.State = state;
-        newInstace.State.Size *= 0.5f;
-
-        // Set prefab copy so it doesn't disable itself automatically on Start & initialize it with state & enable
-        newInstace.InitOnStart = true;
-        newInstace.InitAndEnable();
     }
 
     private List<T> ParseDictOfRetrievedJsonStates<T>(object rawDictOfJsonStates)
@@ -103,7 +67,7 @@ public class FireBaseConnector : MonoBehaviour
 
             }
         }
-        else { Debug.Assert(false, "Json deser error"); }
+        else if (!(rawDictOfJsonStates is null)) { Debug.Assert(false, "Json deser error"); }
 
         return states;
     }

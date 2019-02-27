@@ -63,15 +63,16 @@ public class WheatController : MonoBehaviour
 
     void Start()
     {
-        if (InitOnStart) { if (!_inited) { InitAndEnable(); } }
+        if (InitOnStart) { InitAndEnable(); }
         else { gameObject.SetActive(false); }
     }
 
     public void InitAndEnable()
     {
+        if(_inited) { return; }
         _inited = true;
-        ApplyState();
 
+        ApplyState();
         gameObject.SetActive(true);
     }
 
