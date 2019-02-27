@@ -19,6 +19,8 @@ public class WheatController : MonoBehaviour
     public List<GameObject> DropDowns;
 
     public WheatState State = new WheatState();
+    public bool InitOnStart = true;
+    private bool _inited = false;
 
     internal void ApplyDecision(Answer answer)
     {
@@ -61,7 +63,16 @@ public class WheatController : MonoBehaviour
 
     void Start()
     {
+        if (InitOnStart) { if (!_inited) { InitAndEnable(); } }
+        else { gameObject.SetActive(false); }
+    }
+
+    public void InitAndEnable()
+    {
+        _inited = true;
         ApplyState();
+
+        gameObject.SetActive(true);
     }
 
     void ApplySize()

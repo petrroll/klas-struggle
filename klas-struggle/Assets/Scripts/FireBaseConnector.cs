@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class FireBaseConnector : MonoBehaviour
 {
-    public WheatController Controller;
+    public WheatController PlayerWheat;
+    public WheatController Prefab;
+
+    public bool LoadOtherInstances = true;
+    public bool SaveCurrentInstance = true;
 
     // Start -> retrieveAndInstantiateOtherStates -> DataRetrieved -> PushCurrentState -> PushSuccess
 
@@ -14,9 +18,9 @@ public class FireBaseConnector : MonoBehaviour
     void Start()
     {
         // init generated instance
-        Controller.State = DataStorage.DS.State ?? new WheatState();
-        Controller.State.Size *= 0.5f;
-        Controller.ApplyState();
+        PlayerWheat.State = DataStorage.DS.State ?? new WheatState();
+        PlayerWheat.State.Size *= 0.5f;
+        PlayerWheat.ApplyState();
 
         // init firebase connection
         Firebase firebase = Firebase.CreateNew("https://klas-struggle.firebaseio.com", Secrets.FirebaseAPIKey);
@@ -27,6 +31,9 @@ public class FireBaseConnector : MonoBehaviour
 
     private void RetrieveAndInstantiateOtherStates(Firebase textNodeV1)
     {
+        // if !LoadOtherInstances skip loading and move to push immediately
+        if (!LoadOtherInstances) { PushCurrentState(textNodeV1); return; }
+
         // retrieve instances from firebase
         textNodeV1.OnGetSuccess += DataRetrieved;
         textNodeV1.OnGetFailed += (Firebase fireBase, FirebaseError error) => Debug.Log($"Error retrieving data from firebase: {error.Message}");
@@ -36,8 +43,11 @@ public class FireBaseConnector : MonoBehaviour
 
     private void PushCurrentState(Firebase textNodeV1)
     {
+        // if !LoadOtherInstances skip pushing
+        if (!SaveCurrentInstance) { return; }
+
         // push generated instance to firebase
-        var state = Controller.State;
+        var state = PlayerWheat.State;
         var result = JsonUtility.ToJson(state);
 
         textNodeV1.OnPushSuccess += PushSuccess;
@@ -67,10 +77,15 @@ public class FireBaseConnector : MonoBehaviour
     private void InstantiateNewElement(WheatState state)
     {
         // instantiate one object based on its state
-        var newInstace = Instantiate(Controller, new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-3, 3), 0), Quaternion.identity);
+        Vector3 location = new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-3, 3), 0);
+
+        var newInstace = Instantiate(Prefab, location, Quaternion.identity);
         newInstace.State = state;
         newInstace.State.Size *= 0.5f;
-        newInstace.ApplyState();
+
+        // Set prefab copy so it doesn't disable itself automatically on Start & initialize it with state & enable
+        newInstace.InitOnStart = true;
+        newInstace.InitAndEnable();
     }
 
     private List<T> ParseDictOfRetrievedJsonStates<T>(object rawDictOfJsonStates)
