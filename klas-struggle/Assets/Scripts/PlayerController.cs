@@ -11,6 +11,10 @@ namespace Assets.Scripts
         public FireBaseConnector Connector;
         public Camera Camera;
 
+        public bool SendState = true;
+        public bool RetrieveState = true;
+
+        private int collisions;
         private bool _rooted = false;
 
         public void Start()
@@ -20,7 +24,7 @@ namespace Assets.Scripts
             GenWheat.ApplyState();
 
             // explicitely don't want to await
-            GetAndInstantiateOtherWheats();
+            if (RetrieveState) { GetAndInstantiateOtherWheats(); }
         }
 
         public void Update()
@@ -28,9 +32,12 @@ namespace Assets.Scripts
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // we explicitely don't want to await
-                if (!_rooted) { RootWheat(); _rooted = true; }
+                if (!_rooted && collisions <= 0) { RootWheat(); _rooted = true; }
             }
         }
+
+        public void OnTriggerEnter2D(Collider2D collision) => this.collisions++;
+        public void OnTriggerExit2D(Collider2D collision) => this.collisions--;
 
         private async Task RootWheat()
         {
@@ -39,7 +46,7 @@ namespace Assets.Scripts
             Camera.orthographicSize = 10;
 
             GenWheat.SaveLoc();
-            await Connector.PushStateAsync(GenWheat.State);
+            if (SendState) { await Connector.PushStateAsync(GenWheat.State); }
         }
 
         private async Task GetAndInstantiateOtherWheats()
