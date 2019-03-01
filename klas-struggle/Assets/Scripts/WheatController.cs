@@ -7,17 +7,22 @@ using UnityEngine;
 [System.Serializable]
 public class WheatState
 {
-    public int Checkmarks = -1;
-    public int DropDowns = 1;
+    public int Stage1Answer = -1;
+    public int Stage2Answer = -1;
+    public int Stage3Answer = -1;
+    public int Stage4Answer = -1;
+    public int Stage5Answer = -1;
 
-    public float Size = 2.5f;
+    public float Size = 1;
     public Vector3 Loc;
 }
 
 public class WheatController : MonoBehaviour
 {
-    public List<GameObject> Checkmarks;
-    public List<GameObject> DropDowns;
+    public List<GameObject> Stage1;
+    public List<GameObject> Stage2;
+    public List<GameObject> Stage3;
+    public List<GameObject> Stage4;
 
     public WheatState State = new WheatState();
     public bool InitOnStart = true;
@@ -28,16 +33,24 @@ public class WheatController : MonoBehaviour
         switch (answer.Question.Stage.Id)
         {
             case 0:
-                State.Size = answer.Id == 0 ? 5 : 10;
-                ApplySize();
+                State.Stage1Answer = answer.Id + answer.Question.Id * 2;
+                ApplyStage1State();
                 break;
             case 1:
-                State.Checkmarks = answer.Id + answer.Question.Id * 2;
-                ApplyCheckMarks();
+                State.Stage2Answer = answer.Id + answer.Question.Id * 2;
+                ApplyStage2State();
                 break;
             case 2:
-                State.DropDowns = answer.Id;
-                ApplyDropDowns();
+                State.Stage3Answer = answer.Id + answer.Question.Id * 2;
+                ApplyStage3State();
+                break;
+            case 3:
+                State.Stage4Answer = answer.Id + answer.Question.Id * 2;
+                ApplyStage4State();
+                break;
+            case 4:
+                State.Size = answer.Id == 0 ? 1 : 1.2f;
+                ApplySize();
                 break;
             default:
                 Debug.Assert(false, "Unreachable.");
@@ -46,11 +59,16 @@ public class WheatController : MonoBehaviour
         }
     }
 
+
     public void ApplyState()
     {
         ApplySize();
-        ApplyCheckMarks();
-        ApplyDropDowns();
+
+        ApplyStage1State();
+        ApplyStage2State();
+        ApplyStage3State();
+        ApplyStage4State();
+
         ApplyLoc();
     }
 
@@ -78,30 +96,22 @@ public class WheatController : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    void ApplySize()
-    {
-        transform.localScale = new Vector3(State.Size, State.Size);
-    }
+    void ApplySize() => transform.localScale = new Vector3(State.Size, State.Size);
 
-    void ApplyCheckMarks()
-    {
-        SetActiveObject(Checkmarks, State.Checkmarks);
-    }
+    private void ApplyLoc() => gameObject.transform.localPosition = State.Loc;
 
-    void ApplyDropDowns()
-    {
-        SetActiveObject(DropDowns, State.DropDowns);
-    }
+    private void ApplyStage1State() => SetActiveObject(Stage1, State.Stage1Answer % Stage1.Count);
+    private void ApplyStage2State() => SetActiveObject(Stage2, State.Stage2Answer % Stage2.Count);
+    private void ApplyStage3State() => SetActiveObject(Stage3, State.Stage3Answer % Stage3.Count);
+    private void ApplyStage4State() => SetActiveObject(Stage4, State.Stage4Answer % Stage4.Count);
 
-    private void ApplyLoc()
-    {
-        gameObject.transform.localPosition = State.Loc;
-    }
 
     public void SaveLoc()
     {
         State.Loc = gameObject.transform.localPosition;
     }
+
+
 
 
 }
