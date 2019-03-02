@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using DG.Tweening;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -9,7 +10,7 @@ namespace Assets.Scripts
         public WheatController GenWheat;
 
         public FireBaseConnector Connector;
-        public Camera Camera;
+        public Camera Cam;
 
         public bool SendState = true;
         public bool RetrieveState = true;
@@ -17,8 +18,20 @@ namespace Assets.Scripts
         private int collisions;
         private bool _rooted = false;
 
+        SpriteRenderer _warningSprite;
+        Color _warningSpriteColorVisible;
+        Color _warningSpriteColorInvisible;
+
+        public float UnzoomToSize = 10;
+        public float UnzoomTime = 2.5f;
+
         public void Start()
         {
+            // initialize variables for collision warning box
+            _warningSprite = GetComponent<SpriteRenderer>();
+            _warningSpriteColorVisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.2f);
+            _warningSpriteColorInvisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.0f);
+
             // init generated instance
             GenWheat.State = DataStorage.DS.State ?? new WheatState();
             GenWheat.ApplyState();
@@ -36,15 +49,28 @@ namespace Assets.Scripts
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D collision) => this.collisions++;
-        public void OnTriggerExit2D(Collider2D collision) => this.collisions--;
+        // count colisions 
+        public void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collisions <= 0) {  _warningSprite.color = _warningSpriteColorVisible; }
+            this.collisions++;
+        }
+        public void OnTriggerExit2D(Collider2D collision)
+        {
+            this.collisions--;
+            if (collisions <= 0) { _warningSprite.color = _warningSpriteColorInvisible; }
+        }
 
         private async Task RootWheat()
         {
+            // freeze generated wheat movement
             var followComp = GenWheat.GetComponent<FollowController>();
             followComp.enabled = false;
-            Camera.orthographicSize = 10;
 
+            // Unzoom animation
+            Cam.DOOrthoSize(UnzoomToSize, UnzoomTime);
+
+            // save current location to state and potentially send state
             GenWheat.SaveLoc();
             if (SendState) { await Connector.PushStateAsync(GenWheat.State); }
         }

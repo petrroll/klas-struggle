@@ -15,6 +15,15 @@ public class WheatState
 
     public float Size = 1;
     public Vector3 Loc;
+
+    internal void InitDebugState()
+    {
+        Stage1Answer = 1;
+        Stage2Answer = 1;
+        Stage3Answer = 1;
+        Stage4Answer = 1;
+        Stage5Answer = 1;
+    }
 }
 
 public class WheatController : MonoBehaviour
@@ -23,6 +32,8 @@ public class WheatController : MonoBehaviour
     public List<GameObject> Stage2;
     public List<GameObject> Stage3;
     public List<GameObject> Stage4;
+
+    public bool InitDebugState = false;
 
     public WheatState State = new WheatState();
     public bool InitOnStart = true;
@@ -91,6 +102,8 @@ public class WheatController : MonoBehaviour
     {
         if(_inited) { return; }
         _inited = true;
+
+        if(InitDebugState) { this.State.InitDebugState(); }
 
         ApplyState();
         gameObject.SetActive(true);
