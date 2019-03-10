@@ -432,7 +432,7 @@ MonoBehaviour:
   Connector: {fileID: 1238509939}
   Cam: {fileID: 1106636968}
   SendState: 0
-  RetrieveState: 1
+  RetrieveState: 0
   UnzoomToSize: 10
   UnzoomTime: 2.5
 --- !u!212 &184679639

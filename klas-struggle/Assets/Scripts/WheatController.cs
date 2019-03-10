@@ -116,7 +116,10 @@ public class WheatController : MonoBehaviour
     private void ApplyStage1State() => SetActiveObject(Stage1, State.Stage1Answer % Stage1.Count);
     private void ApplyStage2State() => SetActiveObject(Stage2, State.Stage2Answer % Stage2.Count);
     private void ApplyStage3State() => SetActiveObject(Stage3, State.Stage3Answer % Stage3.Count);
-    private void ApplyStage4State() => SetActiveObject(Stage4, State.Stage4Answer % Stage4.Count);
+    private void ApplyStage4State()  
+    {
+        SetActiveObject(Stage4, State.Stage4Answer % Stage4.Count);
+    }
 
 
     public void SaveLoc()
