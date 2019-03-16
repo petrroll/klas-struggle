@@ -2,11 +2,9 @@
 
 namespace Assets.Scripts
 {
-    class DataStorage
+    public class DataStorage
     {
-        static DataStorage _ds;
-        public static DataStorage DS { get { if (_ds == null) { _ds = new DataStorage(); } return _ds; } }
-
-        public WheatState State;
+        public WheatState GeneratedWheatState;
+        public List<WheatState> OtherWheatStatesOnline;
     }
 }

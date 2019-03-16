@@ -9,11 +9,11 @@ namespace Assets.Scripts
         public WheatController Prefab;
         public WheatController GenWheat;
 
-        public FireBaseConnector Connector;
         public Camera Cam;
 
         public bool SendState = true;
-        public bool RetrieveState = true;
+        public bool CreateOtherWheats = true;
+        public bool D_ForceDownloadAndWaitForOtherWheats = false;
 
         private int collisions;
         private bool _rooted = false;
@@ -25,19 +25,23 @@ namespace Assets.Scripts
         public float UnzoomToSize = 10;
         public float UnzoomTime = 2.5f;
 
+        private GameController gameController;
+
         public void Start()
         {
+            this.gameController = GameController.Get;
+
             // initialize variables for collision warning box
             _warningSprite = GetComponent<SpriteRenderer>();
             _warningSpriteColorVisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.2f);
             _warningSpriteColorInvisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.0f);
 
             // init generated instance
-            GenWheat.State = DataStorage.DS.State ?? new WheatState();
+            GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState();
             GenWheat.ApplyState();
 
             // explicitely don't want to await
-            if (RetrieveState) { GetAndInstantiateOtherWheats(); }
+            if (CreateOtherWheats) { InstantiateOtherWheats(); }
         }
 
         public void Update()
@@ -72,13 +76,19 @@ namespace Assets.Scripts
 
             // save current location to state and potentially send state
             GenWheat.SaveLoc();
-            if (SendState) { await Connector.PushStateAsync(GenWheat.State); }
+            if (SendState) { await gameController.FireBaseConnector.PushStateAsync(GenWheat.State); }
         }
 
-        private async Task GetAndInstantiateOtherWheats()
+        private async Task InstantiateOtherWheats()
         {
-            var states = await Connector.GetStatesAsync();
-            Debug.Log($"Retrieved & instantiated {states.Count} states.");
+            var states = gameController.DataStorage.OtherWheatStatesOnline;
+
+            if(states == null && D_ForceDownloadAndWaitForOtherWheats)
+            {
+                await gameController.DownloadOtherWheatStates();
+                states = gameController.DataStorage.OtherWheatStatesOnline;
+            }
+
             foreach (var state in states)
             {
                 InstantiateNewElement(state);

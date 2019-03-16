@@ -15,7 +15,7 @@ namespace Assets.Scripts.WheatFramework
         public override void ActivateStage()
         {
             // Saves generated wheat into a static state storage & loads next scene
-            DataStorage.DS.State = Controller.State;
+            GameController.Get.DataStorage.GeneratedWheatState = Controller.State;
             SceneManager.LoadScene("field");
         }
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class FireBaseConnector : MonoBehaviour
+public class FireBaseConnector 
 {
     private bool _inited = false;
     private Firebase fbRoot;
