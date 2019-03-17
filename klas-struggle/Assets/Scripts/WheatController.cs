@@ -98,11 +98,12 @@ public class WheatController : MonoBehaviour
             {
                 if (activeNow && !activePreviously)
                 {
-                    objects[i].gameObject.DOFadeChildrenSprites(0, 1, 3); // fade in
+                    objects[i].gameObject.SetFadeChildrenSprites(0);
+                    objects[i].gameObject.DOFadeChildrenSprites(1, 3);             // fade new parts in -> set alpha to 0 & slowly move to 1
                 }
                 else if (!activeNow && activePreviously)
                 {
-                    objects[i].gameObject.DOFadeChildrenSprites(1, 0, 3); // fade out
+                    objects[i].gameObject.DOFadeChildrenSprites(0, 3); // fade out, should already be visible -> just decrease alpha
                 }
 
             }

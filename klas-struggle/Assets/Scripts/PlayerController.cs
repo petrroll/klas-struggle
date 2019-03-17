@@ -104,7 +104,9 @@ namespace Assets.Scripts
             newInstace.InitOnStart = true;
             newInstace.InitAndEnable();
 
-            newInstace.gameObject.DOFadeChildrenSprites(0, 1, 5);
+            // fade new instance in -> set alpha to 0 & slowly move to 1
+            newInstace.gameObject.SetFadeChildrenSprites(0);
+            newInstace.gameObject.DOFadeChildrenSprites(1, 5);
         }
 
     }

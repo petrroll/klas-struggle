@@ -19,13 +19,25 @@ public static class FadableExt
         target.color = color;
     }
 
-    public static void DOFadeChildrenSprites(this GameObject go, float startValue, float endValue, float duration)
+    
+
+    public static void SetFadeChildrenSprites(this GameObject go, float value)
+    {
+        var sprites = go.GetComponentsInChildren<SpriteRenderer>(true);
+
+        foreach (var sprite in sprites)
+        {
+            sprite.SetFade(value);
+        }
+    }
+
+
+    public static void DOFadeChildrenSprites(this GameObject go, float endValue, float duration)
     {
         var sprites = go.GetComponentsInChildren<SpriteRenderer>(true);
         
         foreach(var sprite in sprites)
         {
-            sprite.SetFade(startValue);
             sprite.DOFade(endValue, duration);
         }
     }
@@ -37,14 +49,22 @@ public static class FadableExt
 
     public static void SetFade(this TextMeshPro target, float value) => target.alpha = value;
 
-    public static void DOFadeChildrenTexts(this GameObject go, float startValue, float endValue, float duration)
+    public static void DOFadeChildrenTexts(this GameObject go, float endValue, float duration)
     {
         var objs = go.GetComponentsInChildren<TextMeshPro>(true);
 
         foreach (var obj in objs)
         {
-            obj.SetFade(startValue);
             obj.DOFade(endValue, duration);
+        }
+    }
+
+    public static void SetFadeChildrenTexts(this GameObject go, float value)
+    {
+        var objs = go.GetComponentsInChildren<TextMeshPro>(true);
+        foreach (var obj in objs)
+        {
+            obj.SetFade(value);
         }
     }
 }

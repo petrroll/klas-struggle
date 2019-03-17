@@ -36,9 +36,10 @@ namespace Assets.Scripts
 
                 selectedDecisions.gameObject.SetActive(true);
 
-                if (FadeIn)
+                if (FadeIn) // set alpha to 0 -> slowly move to 1
                 {
-                    this.gameObject.DOFadeChildrenTexts(0, 1, 1);
+                    this.gameObject.SetFadeChildrenTexts(0); 
+                    this.gameObject.DOFadeChildrenTexts(1, 1);
                 }
             }
 
@@ -48,9 +49,9 @@ namespace Assets.Scripts
         {
             ReadyForAnswers = false;
 
-            if (FadeIn)
+            if (FadeIn) // fade out, alpha should already be at 1 -> fade to 0
             {
-                this.gameObject.DOFadeChildrenTexts(1, 0, 1);
+                this.gameObject.DOFadeChildrenTexts(0, 1);
                 await Task.Delay(1000);
             }
 
