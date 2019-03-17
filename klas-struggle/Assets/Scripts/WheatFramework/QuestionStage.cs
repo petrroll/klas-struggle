@@ -18,6 +18,7 @@ namespace Assets.Scripts
         internal Question[] Questions;
 
         internal Decision Decision;
+        internal bool ReadyForAnswers { get; private set; } = false; // Indicates whether the stage can accept answers (e.g. isn't finishing, ...)
 
 
         public override void ActivateStage()
@@ -26,6 +27,7 @@ namespace Assets.Scripts
 
             // activate current stage object
             this.gameObject.SetActive(true);
+            ReadyForAnswers = true;
             
             // Randomly select a question (question) from current stage and activate it's gameObject (answers, ...)
             {
@@ -44,6 +46,8 @@ namespace Assets.Scripts
 
         public override async Task FinishStage()
         {
+            ReadyForAnswers = false;
+
             if (FadeIn)
             {
                 this.gameObject.DOFadeChildrenTexts(1, 0, 1);
