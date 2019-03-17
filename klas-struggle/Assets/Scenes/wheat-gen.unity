@@ -1529,6 +1529,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7543498069198555661, guid: d1137bc207dfe0f438b8888c9e1de96b,
+        type: 3}
+      propertyPath: GenerateAsPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1137bc207dfe0f438b8888c9e1de96b, type: 3}
 --- !u!114 &922775168 stripped
@@ -1756,6 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d9b9519a1477a44b7fc6e698ead357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LazyDownloadWheatsOnInit: 1
 --- !u!4 &1528299074
 Transform:
   m_ObjectHideFlags: 0

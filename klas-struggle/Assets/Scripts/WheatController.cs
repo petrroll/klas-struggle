@@ -34,6 +34,7 @@ public class WheatController : MonoBehaviour
     public List<GameObject> Stage4;
 
     public bool InitDebugState = false;
+    public bool GenerateAsPlayer = false;
 
     public WheatState State = new WheatState();
     public bool InitOnStart = true;
@@ -88,7 +89,24 @@ public class WheatController : MonoBehaviour
     {
         for (int i = 0; i < objects.Count; i++)
         {
-            objects[i].SetActive(i == activeObject);
+            bool activeNow = i == activeObject;
+            bool activePreviously = objects[i].activeSelf;
+
+            objects[i].SetActive(activeNow);
+
+            if (GenerateAsPlayer)
+            {
+                if (activeNow && !activePreviously)
+                {
+                    objects[i].gameObject.DOFadeChildrenSprites(0, 1, 3); // fade in
+                }
+                else if (!activeNow && activePreviously)
+                {
+                    objects[i].gameObject.DOFadeChildrenSprites(1, 0, 3); // fade out
+                }
+
+            }
+
         }
     }
 
@@ -116,10 +134,7 @@ public class WheatController : MonoBehaviour
     private void ApplyStage1State() => SetActiveObject(Stage1, State.Stage1Answer % Stage1.Count);
     private void ApplyStage2State() => SetActiveObject(Stage2, State.Stage2Answer % Stage2.Count);
     private void ApplyStage3State() => SetActiveObject(Stage3, State.Stage3Answer % Stage3.Count);
-    private void ApplyStage4State()  
-    {
-        SetActiveObject(Stage4, State.Stage4Answer % Stage4.Count);
-    }
+    private void ApplyStage4State() => SetActiveObject(Stage4, State.Stage4Answer % Stage4.Count);
 
 
     public void SaveLoc()

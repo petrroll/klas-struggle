@@ -12,6 +12,7 @@ namespace Assets.Scripts
     class QuestionStage : Stage
     {
         public bool ActiveOnStart = false;
+        public bool FadeIn = true;
         public Stage NextStage;
 
         internal Question[] Questions;
@@ -32,12 +33,23 @@ namespace Assets.Scripts
                 var selectedDecisions = Questions[i];
 
                 selectedDecisions.gameObject.SetActive(true);
+
+                if (FadeIn)
+                {
+                    this.gameObject.DOFadeChildrenTexts(0, 1, 1);
+                }
             }
 
         }
 
-        public override void FinishStage()
+        public override async Task FinishStage()
         {
+            if (FadeIn)
+            {
+                this.gameObject.DOFadeChildrenTexts(1, 0, 1);
+                await Task.Delay(1000);
+            }
+
             // disable current stage's gameObject ane activate next stage 
             this.gameObject.SetActive(false);
             NextStage?.ActivateStage();

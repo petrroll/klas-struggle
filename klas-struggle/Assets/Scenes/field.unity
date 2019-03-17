@@ -432,7 +432,7 @@ MonoBehaviour:
   Cam: {fileID: 1106636968}
   SendState: 0
   CreateOtherWheats: 1
-  DEBUG_DownloadOtherWheatsInTheBeginningIfNotDownloaded: 1
+  D_ForceDownloadAndWaitForOtherWheats: 1
   UnzoomToSize: 10
   UnzoomTime: 2.5
 --- !u!212 &184679639
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d9b9519a1477a44b7fc6e698ead357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DownloadOnInit: 0
+  LazyDownloadWheatsOnInit: 0
 --- !u!4 &1438969425
 Transform:
   m_ObjectHideFlags: 0

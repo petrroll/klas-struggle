@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.WheatFramework
 {
@@ -12,6 +13,6 @@ namespace Assets.Scripts.WheatFramework
         }
 
         public abstract void ActivateStage();
-        public abstract void FinishStage();
+        public abstract Task FinishStage();
     }
 }

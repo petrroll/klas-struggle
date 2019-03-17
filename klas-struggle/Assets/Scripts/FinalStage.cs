@@ -19,8 +19,9 @@ namespace Assets.Scripts.WheatFramework
             SceneManager.LoadScene("field");
         }
 
-        public override void FinishStage()
+        public override Task FinishStage()
         {
+            return Task.CompletedTask;
         }
     }
 }

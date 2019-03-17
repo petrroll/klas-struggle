@@ -106,6 +106,8 @@ namespace Assets.Scripts
             // Set prefab copy so it doesn't disable itself automatically on Start & initialize it with state & enable
             newInstace.InitOnStart = true;
             newInstace.InitAndEnable();
+
+            newInstace.gameObject.DOFadeChildrenSprites(0, 1, 5);
         }
 
     }
