@@ -97,10 +97,7 @@ namespace Assets.Scripts
 
         private void InstantiateNewElement(WheatState state)
         {
-            // instantiate one object based on its state
-            Vector3 location = new Vector3(UnityEngine.Random.Range(-5, 5), UnityEngine.Random.Range(-3, 3), 0);
-
-            var newInstace = Instantiate(Prefab, location, Quaternion.identity);
+            var newInstace = Instantiate(Prefab, new Vector3(0, 0, 0), Quaternion.identity); //location doesn't matter, gets overwritten by state's loc
             newInstace.State = state;
 
             // Set prefab copy so it doesn't disable itself automatically on Start & initialize it with state & enable
