@@ -1,9 +1,4 @@
-﻿using Assets.Scripts.StageDecisions;
-using Assets.Scripts.WheatFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Assets.Scripts.WheatFramework;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -55,7 +50,7 @@ namespace Assets.Scripts
                 await Task.Delay(1000);
             }
 
-            // disable current stage's gameObject ane activate next stage 
+            // disable current stage's gameObject and activate next stage 
             this.gameObject.SetActive(false);
             NextStage?.ActivateStage();
         }

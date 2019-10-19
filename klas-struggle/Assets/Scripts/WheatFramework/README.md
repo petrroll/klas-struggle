@@ -57,6 +57,10 @@ FinalStage:
 Stages: 
 	- Gathers & inits all children Stages
 
+- Decision: 
+	- Has reference to CurrentStage (inited by CurrentStage)
+	- Calls CurrentStage.FinishStage() when decided
+
 
 
 

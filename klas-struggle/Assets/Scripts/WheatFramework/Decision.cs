@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -8,14 +7,13 @@ namespace Assets.Scripts
     {
         internal QuestionStage CurrentStage;
 
-        public virtual void Decide(Answer answer)
+        public virtual async Task Decide(Answer answer)
         {
             Debug.Assert(CurrentStage != null, "Stage not initialized");
             Debug.Log($"Decision: S:{answer.Question.Stage.Id}|Q:{answer.Question.Id}|A:{answer.Id}");
 
-            CurrentStage.FinishStage();
+            await CurrentStage.FinishStage();
         }
-
 
         public void Init(QuestionStage stage)
         {

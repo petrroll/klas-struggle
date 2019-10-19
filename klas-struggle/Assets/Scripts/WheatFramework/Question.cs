@@ -26,7 +26,7 @@ namespace Assets.Scripts
             // assumes the order of retrieved components is the same as the order in Editor
             Answers = GetComponentsInChildren<Answer>(true);
 
-            // Inits ids of all answers, must be called only after QuestionID and Decision has already been itialized.
+            // Inits ids of all answers, must be called only after QuestionID and Decision has already been initialized.
             for (int i = 0; i < Answers.Length; i++)
             {
                 Answers[i].Init(this, i, dec);

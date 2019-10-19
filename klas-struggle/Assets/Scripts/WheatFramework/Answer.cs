@@ -37,7 +37,7 @@ namespace Assets.Scripts
         private void SelectCurrentAnswer()
         {
             Debug.Assert(Question.Id != -1 && Id != -1, $"Answers selected but not initialized Q:{Question.Id}, A:{Id}.");
-            if (Question.Stage.ReadyForAnswers) { Decision.Decide(this); } // Selects answer only when current stage is ready for answers (e.g. is not finishing).
+            if (Question.Stage.ReadyForAnswers) { _ = Decision.Decide(this); } // Selects answer only when current stage is ready for answers (e.g. is not finishing).
         }
 
         private void InitAnswerKey(int answerID)

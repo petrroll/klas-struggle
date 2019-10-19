@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Utils;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.StageDecisions
@@ -10,7 +11,7 @@ namespace Assets.Scripts.StageDecisions
         public GameObject ObjectToReplace = null;
         public List<GameObjList> Replacements;
 
-        public override void Decide(Answer answer)
+        public override async Task Decide(Answer answer)
         {
             int questionID = answer.Question.Id;
             int selectedAnswerID = answer.Id;
@@ -18,7 +19,7 @@ namespace Assets.Scripts.StageDecisions
             ObjectToReplace?.SetActive(false);
             Replacements[questionID][selectedAnswerID].SetActive(true);
 
-            base.Decide(answer);
+            await base.Decide(answer);
         }
 
         protected override bool Verify(QuestionStage stage)

@@ -10,10 +10,10 @@ namespace Assets.Scripts.StageDecisions
     {
         public WheatController Controller;
 
-        public override void Decide(Answer answer)
+        public async override Task Decide(Answer answer)
         {
             Controller.ApplyDecision(answer);
-            base.Decide(answer);
+            await base.Decide(answer);
         }
 
         protected override bool Verify(QuestionStage stage) => true;
