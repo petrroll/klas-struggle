@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.WheatFramework;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.WheatFramework
 {
     class QuestionStage : Stage
     {

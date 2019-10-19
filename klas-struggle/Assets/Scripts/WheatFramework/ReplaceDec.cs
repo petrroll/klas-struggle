@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.StageDecisions
+namespace Assets.Scripts.WheatFramework
 {
     class ReplaceDec : Decision
     {

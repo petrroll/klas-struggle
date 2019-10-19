@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts;
+﻿using System.Collections.Generic;
+using Assets.Scripts.WheatFramework;
 using UnityEngine;
 
 [System.Serializable]
