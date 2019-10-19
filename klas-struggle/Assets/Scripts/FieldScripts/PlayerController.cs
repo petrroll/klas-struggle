@@ -1,8 +1,12 @@
-﻿using DG.Tweening;
+﻿using Assets.Scripts.KlasStruggle.Persistent;
+using Assets.Scripts.KlasStruggle.Wheat;
+using Assets.Scripts.Movement;
+using Assets.Scripts.Utils;
+using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.KlasStruggle.Field
 {
     class PlayerController : MonoBehaviour
     {

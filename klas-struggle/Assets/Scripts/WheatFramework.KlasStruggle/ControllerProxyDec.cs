@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Assets.Scripts.KlasStruggle.Wheat;
+using System.Threading.Tasks;
 
-namespace Assets.Scripts.WheatFramework
+namespace Assets.Scripts.WheatFramework.KlasStruggle
 {
     class ControllerProxyDec : Decision
     {

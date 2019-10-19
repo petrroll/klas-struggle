@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Movement
 {
-
     public class FollowController : MonoBehaviour
     {
         public GameObject Target;
