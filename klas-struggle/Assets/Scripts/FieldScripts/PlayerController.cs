@@ -52,7 +52,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             // init generated instance
             GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState();
-            GenWheat.ApplyState();
+            GenWheat.InitAndEnable();
 
             // explicitely don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
@@ -63,7 +63,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             Cam.DOOrthoSize(origOrthoSize, UnzoomTimeInit);
 
             var origScale = GenWheat.transform.localScale;
-            GenWheat.transform.DOScale(origScale/10, 0);    // `GenWheat.transform.localScale = origScale / 10;` doesn't register for _some_ reason
+            GenWheat.transform.localScale = origScale / UnzoomCoefInitial;
             var tweener =  GenWheat.transform.DOScale(origScale, UnzoomTimeInit);
 
             tweener.OnComplete(InitComplete); 
