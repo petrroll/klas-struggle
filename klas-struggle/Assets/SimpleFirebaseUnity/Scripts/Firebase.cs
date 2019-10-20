@@ -37,6 +37,7 @@ using System.Net;
 
 namespace SimpleFirebaseUnity
 {
+    using Assets.Scripts.Utils;
     using MiniJSON;
 
 #if !UNITY_WEBGL
@@ -1092,6 +1093,13 @@ namespace SimpleFirebaseUnity
 
         protected IEnumerator RequestCoroutine(string url, byte[] postData, Dictionary<string, string> headers, Action<Firebase, DataSnapshot> OnSuccess, Action<Firebase, FirebaseError> OnFailed)
         {
+            if (!UrlHelpers.CheckURLValid(url))
+            {
+                Debug.LogWarning($"Invalid URL: {url}");
+                OnFailed(this, new FirebaseError($"Invalid URL: {url}"));
+                yield break;
+            }
+
 #pragma warning disable CS0618 // Type or member is obsolete
             using (WWW www = (headers != null) ? new WWW(url, postData, headers) : (postData != null) ? new WWW(url, postData) : new WWW(url))
 #pragma warning restore CS0618 // Type or member is obsolete
