@@ -3441,7 +3441,7 @@ MonoBehaviour:
   - {fileID: 2705365627289435237}
   - {fileID: 5834668668716349403}
   InitDebugState: 0
-  GenerateAsPlayer: 1
+  GenerateAsPlayer: 0
   State:
     Stage1Answer: -1
     Stage2Answer: -1

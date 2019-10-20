@@ -19,15 +19,15 @@ namespace Assets.Scripts.KlasStruggle.Field
         public bool CreateOtherWheats = true;
         public bool D_ForceDownloadAndWaitForOtherWheats = false;
 
-        private int collisions;
         private bool _rooted = false;
+        BoxCollider2D _boxCollider2D = null;
 
         SpriteRenderer _warningSprite;
         Color _warningSpriteColorVisible;
         Color _warningSpriteColorInvisible;
 
-        public float UnzoomToSize = 10;
-        public float UnzoomTime = 2.5f;
+        public float UnzoomToSizeRoot = 10;
+        public float UnzoomTimeRoot = 2.5f;
 
         private GameController gameController;
 
@@ -36,9 +36,12 @@ namespace Assets.Scripts.KlasStruggle.Field
             this.gameController = GameController.Get;
 
             // initialize variables for collision warning box
+            _boxCollider2D = this.GetComponent<BoxCollider2D>();
+
             _warningSprite = GetComponent<SpriteRenderer>();
             _warningSpriteColorVisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.2f);
             _warningSpriteColorInvisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.0f);
+            _warningSprite.color = IsInCollision() ? _warningSpriteColorVisible : _warningSpriteColorInvisible;
 
             // init generated instance
             GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState();
@@ -53,21 +56,21 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // we explicitely don't want to await
-                if (!_rooted && collisions <= 0) { _ = RootWheatAsync(); _rooted = true; }
+                if (!_rooted && !IsInCollision()) { _ = RootWheatAsync(); _rooted = true; }
             }
         }
 
         // count colisions 
-        public void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D _)
         {
-            if (collisions <= 0) {  _warningSprite.color = _warningSpriteColorVisible; }
-            this.collisions++;
+            if (IsInCollision() && !_rooted) {  _warningSprite.color = _warningSpriteColorVisible; }
         }
-        public void OnTriggerExit2D(Collider2D collision)
+        public void OnTriggerExit2D(Collider2D _)
         {
-            this.collisions--;
-            if (collisions <= 0) { _warningSprite.color = _warningSpriteColorInvisible; }
+            if (!IsInCollision()) { _warningSprite.color = _warningSpriteColorInvisible; }
         }
+
+        bool IsInCollision() => _boxCollider2D.IsTouchingLayers();
 
         private async Task RootWheatAsync()
         {
@@ -76,7 +79,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             followComp.enabled = false;
 
             // Unzoom animation
-            Cam.DOOrthoSize(UnzoomToSize, UnzoomTime);
+            Cam.DOOrthoSize(UnzoomToSizeRoot, UnzoomTimeRoot);
 
             // save current location to state and potentially send state
             GenWheat.SaveLoc();

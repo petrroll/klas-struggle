@@ -402,7 +402,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0051885694, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
@@ -413,7 +413,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12720788, y: 0.13089745}
+  m_Size: {x: 0.07654303, y: 0.13089745}
   m_EdgeRadius: 0
 --- !u!114 &184679638
 MonoBehaviour:
@@ -433,8 +433,10 @@ MonoBehaviour:
   SendState: 0
   CreateOtherWheats: 1
   D_ForceDownloadAndWaitForOtherWheats: 1
-  UnzoomToSize: 10
-  UnzoomTime: 2.5
+  UnzoomToSizeRoot: 10
+  UnzoomTimeRoot: 2.5
+  UnzoomCoefInitial: 10
+  UnzoomTimeInit: 2.5
 --- !u!212 &184679639
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -553,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 7543498069198555661, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
       propertyPath: InitDebugState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6277236669677317641, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
