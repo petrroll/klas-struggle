@@ -16,7 +16,7 @@ public class SampleScript : MonoBehaviour
     static int debug_idx = 0;
 
     [SerializeField]
-    TextMesh textMesh;
+    TextMesh textMesh = null;
 
 
     // Use this for initialization

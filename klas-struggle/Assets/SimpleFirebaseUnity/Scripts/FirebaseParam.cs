@@ -73,7 +73,9 @@ namespace SimpleFirebaseUnity
         {
             get
             {
+#pragma warning disable CS0618 // Type or member is obsolete
                 return WWW.EscapeURL(param);
+#pragma warning restore CS0618 // Type or member is obsolete
             }
         }
 

@@ -391,7 +391,9 @@ namespace SimpleFirebaseUnity
 
                 string url = Endpoint;
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 string param = WWW.EscapeURL(query.Parameter);
+#pragma warning restore CS0618 // Type or member is obsolete
 
                 if (param != "")
                     url += "?" + param;
@@ -430,7 +432,9 @@ namespace SimpleFirebaseUnity
 
                 string url = Endpoint;
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 string param = WWW.EscapeURL(query.Parameter);
+#pragma warning restore CS0618 // Type or member is obsolete
 
                 if (param != "")
                     url += "?" + param;
@@ -572,7 +576,9 @@ namespace SimpleFirebaseUnity
 
                 string url = Endpoint;
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 string param = WWW.EscapeURL(query.Parameter);
+#pragma warning restore CS0618 // Type or member is obsolete
 
                 if (param != string.Empty)
                     url += "?" + param;
@@ -697,7 +703,9 @@ namespace SimpleFirebaseUnity
 
                 string url = Endpoint;
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 string param = WWW.EscapeURL(query.Parameter);
+#pragma warning restore CS0618 // Type or member is obsolete
 
                 if (param != string.Empty)
                     url += "?" + param;
@@ -827,7 +835,9 @@ namespace SimpleFirebaseUnity
 
                 string url = Endpoint;
 
+#pragma warning disable CS0618 // Type or member is obsolete
                 string param = WWW.EscapeURL(query.Parameter);
+#pragma warning restore CS0618 // Type or member is obsolete
 
                 if (param != string.Empty)
                     url += "?" + param;
@@ -1082,7 +1092,9 @@ namespace SimpleFirebaseUnity
 
         protected IEnumerator RequestCoroutine(string url, byte[] postData, Dictionary<string, string> headers, Action<Firebase, DataSnapshot> OnSuccess, Action<Firebase, FirebaseError> OnFailed)
         {
+#pragma warning disable CS0618 // Type or member is obsolete
             using (WWW www = (headers != null) ? new WWW(url, postData, headers) : (postData != null) ? new WWW(url, postData) : new WWW(url))
+#pragma warning restore CS0618 // Type or member is obsolete
             {
                 // Wait until load done
                 yield return www;
