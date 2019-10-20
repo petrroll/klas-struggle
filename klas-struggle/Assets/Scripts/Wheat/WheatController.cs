@@ -83,19 +83,23 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         
         /// <summary>
         /// Activates and potentially fades-in desired object and inactivates & fades-out all other.
-        /// Potentially aligns ConnectPoints.
+        /// Potentially aligns ConnectPoints & starts animation.
         /// </summary>
-        void SetActiveObject(List<GameObject> objects, int activeObject)
+        void SetActiveObject(List<GameObject> objects, int activatedObjIndex)
         {
-            if (activeObject >= 0)
+            if (activatedObjIndex >= 0)
             {
-                AllignObjectsPlugWithPreviouslyActiveSocket(objects[activeObject]);
+                var activatedObject = objects[activatedObjIndex];
+
+                AllignObjectsPlugWithPreviouslyActiveSocket(activatedObject);
+                var animationObj = activatedObject.GetComponentInChildren<Animation>(false);
+                animationObj?.StartAnimation();
             }
 
             // enable activeObject from `objects` (current stage objects) and hide all other ones
             for (int i = 0; i < objects.Count; i++)
             {
-                bool activeNow = (i == activeObject);
+                bool activeNow = (i == activatedObjIndex);
                 bool activePreviously = objects[i].activeSelf;
 
                 objects[i].SetActive(activeNow);
