@@ -19,6 +19,8 @@ namespace Assets.Scripts.KlasStruggle.Field
         public bool CreateOtherWheats = true;
         public bool D_ForceDownloadAndWaitForOtherWheats = false;
 
+        private bool _inited = false;
+
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
 
@@ -29,11 +31,16 @@ namespace Assets.Scripts.KlasStruggle.Field
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
 
+        public float UnzoomCoefInitial = 10;
+        public float UnzoomTimeInit = 5f;
+
         private GameController gameController;
+        private MoveController moveController;
 
         public void Start()
         {
-            this.gameController = GameController.Get;
+            gameController = GameController.Get;
+            moveController = this.GetComponent<MoveController>();
 
             // initialize variables for collision warning box
             _boxCollider2D = this.GetComponent<BoxCollider2D>();
@@ -49,6 +56,23 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             // explicitely don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
+
+            // fire initial unzoom transition to field & set _inited & enable movement after its done
+            var origOrthoSize = Cam.orthographicSize;
+            Cam.orthographicSize = origOrthoSize / UnzoomCoefInitial;
+            Cam.DOOrthoSize(origOrthoSize, UnzoomTimeInit);
+
+            var origScale = GenWheat.transform.localScale;
+            GenWheat.transform.DOScale(origScale/10, 0);    // `GenWheat.transform.localScale = origScale / 10;` doesn't register for _some_ reason
+            var tweener =  GenWheat.transform.DOScale(origScale, UnzoomTimeInit);
+
+            tweener.OnComplete(InitComplete); 
+        }
+
+        private void InitComplete()
+        {
+            _inited = true; 
+            moveController.enableMovement = true;
         }
 
         public void Update()
@@ -56,7 +80,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // we explicitely don't want to await
-                if (!_rooted && !IsInCollision()) { _ = RootWheatAsync(); _rooted = true; }
+                if (!_rooted && _inited && !IsInCollision()) { _ = RootWheatAsync(); _rooted = true; }
             }
         }
 
