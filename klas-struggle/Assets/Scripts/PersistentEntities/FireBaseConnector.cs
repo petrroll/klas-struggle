@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.KlasStruggle.Wheat;
+﻿using Assets.Configs.Secrets;
+using Assets.Scripts.KlasStruggle.Wheat;
 using SimpleFirebaseUnity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
