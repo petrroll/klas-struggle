@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Utils;
 using Assets.Scripts.WheatFramework;
@@ -20,27 +21,56 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         public bool InitOnStart = true;
         private bool _inited = false;
 
+        void Start()
+        {
+            if (InitOnStart) { InitAndEnable(); }
+            else { gameObject.SetActive(false); }
+        }
+
+        public void InitAndEnable()
+        {
+            if (_inited) { return; }
+            _inited = true;
+
+            if (InitDebugState) { this.State.InitDebugState(); }
+
+            ApplyState();
+            gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// Applies state to actual representation: enables children defined by the state, ... .
+        /// </summary>
+        public void ApplyState()
+        {
+            ApplySize();
+
+            ApplyStageResult(1);
+            ApplyStageResult(2);
+            ApplyStageResult(3);
+            ApplyStageResult(4);
+
+            ApplyLoc();
+        }
+
+        /// <summary>
+        /// Applies decisions from WheatFramework's answers -> advances current wheat generation.
+        /// </summary>
         internal void ApplyDecision(Answer answer)
         {
-            switch (answer.Question.Stage.Id)
+            Debug.Assert(GenerateAsPlayer);
+
+            int stageIndex = answer.Question.Stage.Id + 1;
+            switch (stageIndex)
             {
-                case 0:
-                    State.Stage1Answer = answer.Id + answer.Question.Id * 2;
-                    ApplyStage1State();
-                    break;
                 case 1:
-                    State.Stage2Answer = answer.Id + answer.Question.Id * 2;
-                    ApplyStage2State();
-                    break;
                 case 2:
-                    State.Stage3Answer = answer.Id + answer.Question.Id * 2;
-                    ApplyStage3State();
-                    break;
                 case 3:
-                    State.Stage4Answer = answer.Id + answer.Question.Id * 2;
-                    ApplyStage4State();
-                    break;
                 case 4:
+                    SetStateStageAnswer(stageIndex, answer.Id + answer.Question.Id * 2);
+                    ApplyStageResult(stageIndex);
+                    break;
+                case 5:
                     State.Size = answer.Id == 0 ? 1 : 1.2f;
                     ApplySize();
                     break;
@@ -50,28 +80,19 @@ namespace Assets.Scripts.KlasStruggle.Wheat
 
             }
         }
-
-        public void ApplyState()
-        {
-            ApplySize();
-
-            ApplyStage1State();
-            ApplyStage2State();
-            ApplyStage3State();
-            ApplyStage4State();
-
-            ApplyLoc();
-        }
-
+        
+        /// <summary>
+        /// Activates and potentially fades-in desired object and inactivates & fades-out all other.
+        /// Potentially aligns ConnectPoints.
+        /// </summary>
         void SetActiveObject(List<GameObject> objects, int activeObject)
         {
             if (activeObject >= 0)
             {
-                var newActiveObject = objects[activeObject];
-                AllignObjectsPlugWithPreviouslyActiveSocket(newActiveObject);
+                AllignObjectsPlugWithPreviouslyActiveSocket(objects[activeObject]);
             }
 
-            // enable activeObject from `objects` (current stage objects) and disable all other ones
+            // enable activeObject from `objects` (current stage objects) and hide all other ones
             for (int i = 0; i < objects.Count; i++)
             {
                 bool activeNow = (i == activeObject);
@@ -81,18 +102,16 @@ namespace Assets.Scripts.KlasStruggle.Wheat
 
                 if (GenerateAsPlayer)
                 {
-                    if (activeNow && !activePreviously)
+                    if (activeNow && !activePreviously) // fade new parts in -> set alpha to 0 & slowly move to 1
                     {
                         objects[i].gameObject.SetFadeChildrenSprites(0);
-                        objects[i].gameObject.DOFadeChildrenSprites(1, 3);             // fade new parts in -> set alpha to 0 & slowly move to 1
+                        objects[i].gameObject.DOFadeChildrenSprites(1, 3);
                     }
                     else if (!activeNow && activePreviously)
                     {
                         objects[i].gameObject.DOFadeChildrenSprites(0, 3); // fade out, should already be visible -> just decrease alpha
                     }
-
                 }
-
             }
         }
 
@@ -124,35 +143,45 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         }
 
 
-        void Start()
-        {
-            if (InitOnStart) { InitAndEnable(); }
-            else { gameObject.SetActive(false); }
-        }
-
-        public void InitAndEnable()
-        {
-            if (_inited) { return; }
-            _inited = true;
-
-            if (InitDebugState) { this.State.InitDebugState(); }
-
-            ApplyState();
-            gameObject.SetActive(true);
-        }
-
         void ApplySize() => transform.localScale = new Vector3(State.Size, State.Size);
 
-        private void ApplyLoc() => gameObject.transform.localPosition = State.Loc;
+        void ApplyLoc() => gameObject.transform.localPosition = State.Loc;
 
-        private void ApplyStage1State() => SetActiveObject(Stage1, State.Stage1Answer >= 0 ? State.Stage1Answer % Stage1.Count : -1);
-        private void ApplyStage2State() => SetActiveObject(Stage2, State.Stage2Answer >= 0 ? State.Stage2Answer % Stage2.Count : -1);
-        private void ApplyStage3State() => SetActiveObject(Stage3, State.Stage3Answer >= 0 ? State.Stage3Answer % Stage3.Count : -1);
-        private void ApplyStage4State() => SetActiveObject(Stage4, State.Stage4Answer >= 0 ? State.Stage4Answer % Stage4.Count : -1);
-
-        private List<GameObject> GetStageObjects(int i)
+        void ApplyStageResult(int stageIndex)
         {
-            switch (i)
+            var stage = GetStageObjects(stageIndex);
+            var stageAnswer = GetStateSageAnswer(stageIndex);
+
+            SetActiveObject(stage, stageAnswer >= 0 ? stageAnswer % stage.Count : -1);
+        }
+
+        void SetStateStageAnswer(int stageIndex, int answerId) 
+            => GetStateSageAnswer(stageIndex) = answerId;
+
+        public void SaveLoc() 
+            => State.Loc = gameObject.transform.localPosition;
+
+        private ref int GetStateSageAnswer(int stageIndex)
+        {
+            switch (stageIndex)
+            {
+                case 1:
+                    return ref State.Stage1Answer;
+                case 2:
+                    return ref State.Stage2Answer;
+                case 3:
+                    return ref State.Stage3Answer;
+                case 4:
+                    return ref State.Stage4Answer;
+                default:
+                    throw new InvalidOperationException();
+            }
+
+        }
+
+        private List<GameObject> GetStageObjects(int stageIndex)
+        {
+            switch (stageIndex)
             {
                 case 1:
                     return Stage1;
@@ -163,13 +192,8 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                 case 4:
                     return Stage4;
                 default:
-                    return null;
+                    throw new InvalidOperationException();
             }
-        }
-
-        public void SaveLoc()
-        {
-            State.Loc = gameObject.transform.localPosition;
         }
     }
 }
