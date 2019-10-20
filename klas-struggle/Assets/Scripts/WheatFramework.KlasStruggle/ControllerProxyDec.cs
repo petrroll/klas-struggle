@@ -7,10 +7,10 @@ namespace Assets.Scripts.WheatFramework.KlasStruggle
     {
         public WheatController Controller = null;
 
-        public async override Task Decide(Answer answer)
+        public async override Task DecideAsync(Answer answer)
         {
             Controller.ApplyDecision(answer);
-            await base.Decide(answer);
+            await base.DecideAsync(answer);
         }
 
         protected override bool Verify(QuestionStage stage) => true;

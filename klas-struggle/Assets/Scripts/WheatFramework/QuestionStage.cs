@@ -40,7 +40,7 @@ namespace Assets.Scripts.WheatFramework
 
         }
 
-        public override async Task FinishStage()
+        public override async Task FinishStageAsync()
         {
             ReadyForAnswers = false;
 

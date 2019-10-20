@@ -7,12 +7,12 @@ namespace Assets.Scripts.WheatFramework
     {
         internal QuestionStage CurrentStage;
 
-        public virtual async Task Decide(Answer answer)
+        public virtual async Task DecideAsync(Answer answer)
         {
             Debug.Assert(CurrentStage != null, "Stage not initialized");
             Debug.Log($"Decision: S:{answer.Question.Stage.Id}|Q:{answer.Question.Id}|A:{answer.Id}");
 
-            await CurrentStage.FinishStage();
+            await CurrentStage.FinishStageAsync();
         }
 
         public void Init(QuestionStage stage)

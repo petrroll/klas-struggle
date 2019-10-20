@@ -13,6 +13,6 @@ namespace Assets.Scripts.WheatFramework
         }
 
         public abstract void ActivateStage();
-        public abstract Task FinishStage();
+        public abstract Task FinishStageAsync();
     }
 }

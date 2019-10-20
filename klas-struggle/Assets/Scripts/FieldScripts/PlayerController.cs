@@ -45,7 +45,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             GenWheat.ApplyState();
 
             // explicitely don't want to await
-            if (CreateOtherWheats) { InstantiateOtherWheats(); }
+            if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
         }
 
         public void Update()
@@ -53,7 +53,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // we explicitely don't want to await
-                if (!_rooted && collisions <= 0) { RootWheat(); _rooted = true; }
+                if (!_rooted && collisions <= 0) { _ = RootWheatAsync(); _rooted = true; }
             }
         }
 
@@ -69,7 +69,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (collisions <= 0) { _warningSprite.color = _warningSpriteColorInvisible; }
         }
 
-        private async Task RootWheat()
+        private async Task RootWheatAsync()
         {
             // freeze generated wheat movement
             var followComp = GenWheat.GetComponent<FollowController>();
@@ -83,13 +83,13 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (SendState) { await gameController.FireBaseConnector.PushStateAsync(GenWheat.State); }
         }
 
-        private async Task InstantiateOtherWheats()
+        private async Task InstantiateOtherWheatsAsync()
         {
             var states = gameController.DataStorage.OtherWheatStatesOnline;
 
             if(states == null && D_ForceDownloadAndWaitForOtherWheats)
             {
-                await gameController.DownloadOtherWheatStates();
+                await gameController.DownloadOtherWheatStatesAsync();
                 states = gameController.DataStorage.OtherWheatStatesOnline;
             }
 

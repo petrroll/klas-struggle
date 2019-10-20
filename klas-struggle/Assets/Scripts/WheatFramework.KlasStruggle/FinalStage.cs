@@ -17,7 +17,7 @@ namespace Assets.Scripts.WheatFramework.KlasStruggle
             SceneManager.LoadScene(NextScene);
         }
 
-        public override Task FinishStage()
+        public override Task FinishStageAsync()
         {
             return Task.CompletedTask;
         }

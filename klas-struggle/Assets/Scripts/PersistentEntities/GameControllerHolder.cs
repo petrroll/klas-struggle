@@ -14,7 +14,7 @@ namespace Assets.Scripts.KlasStruggle.Persistent
         void Start()
         {
             Controller = GameController.Get;
-            _ = Controller.Init(LazyDownloadWheatsOnInit);
+            _ = Controller.InitAsync(LazyDownloadWheatsOnInit);
         }
 
 

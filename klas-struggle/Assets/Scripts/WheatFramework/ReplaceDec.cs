@@ -11,7 +11,7 @@ namespace Assets.Scripts.WheatFramework
         public GameObject ObjectToReplace = null;
         public List<GameObjList> Replacements = new List<GameObjList>();
 
-        public override async Task Decide(Answer answer)
+        public override async Task DecideAsync(Answer answer)
         {
             int questionID = answer.Question.Id;
             int selectedAnswerID = answer.Id;
@@ -19,7 +19,7 @@ namespace Assets.Scripts.WheatFramework
             ObjectToReplace?.SetActive(false);
             Replacements[questionID][selectedAnswerID].SetActive(true);
 
-            await base.Decide(answer);
+            await base.DecideAsync(answer);
         }
 
         protected override bool Verify(QuestionStage stage)

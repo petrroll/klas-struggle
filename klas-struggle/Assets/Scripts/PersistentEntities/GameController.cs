@@ -22,15 +22,15 @@ namespace Assets.Scripts.KlasStruggle.Persistent
             DataStorage = new DataStorage();
         }
 
-        public async Task Init(bool lazyDownloadWheatsOnInit)
+        public async Task InitAsync(bool lazyDownloadWheatsOnInit)
         {
             if (_inited) { return; }
             _inited = true;
 
-            if (lazyDownloadWheatsOnInit) { await this.DownloadOtherWheatStates(); }
+            if (lazyDownloadWheatsOnInit) { await this.DownloadOtherWheatStatesAsync(); }
         }
 
-        public async Task DownloadOtherWheatStates()
+        public async Task DownloadOtherWheatStatesAsync()
         {
             var states = await FireBaseConnector.GetStatesAsync();
 
