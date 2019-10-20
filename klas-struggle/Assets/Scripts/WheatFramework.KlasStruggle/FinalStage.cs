@@ -7,7 +7,7 @@ namespace Assets.Scripts.WheatFramework.KlasStruggle
 {
     class FinalStage : Stage
     {
-        public WheatController Controller;
+        public WheatController Controller = null;
         public string NextScene = "field";
 
         public override void ActivateStage()

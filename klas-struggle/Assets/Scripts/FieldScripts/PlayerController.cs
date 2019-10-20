@@ -10,10 +10,10 @@ namespace Assets.Scripts.KlasStruggle.Field
 {
     class PlayerController : MonoBehaviour
     {
-        public WheatController Prefab;
-        public WheatController GenWheat;
+        public WheatController Prefab = null;
+        public WheatController GenWheat = null;
 
-        public Camera Cam;
+        public Camera Cam = null;
 
         public bool SendState = true;
         public bool CreateOtherWheats = true;

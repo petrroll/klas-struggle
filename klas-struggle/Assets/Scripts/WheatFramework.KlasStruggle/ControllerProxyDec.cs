@@ -5,7 +5,7 @@ namespace Assets.Scripts.WheatFramework.KlasStruggle
 {
     class ControllerProxyDec : Decision
     {
-        public WheatController Controller;
+        public WheatController Controller = null;
 
         public async override Task Decide(Answer answer)
         {

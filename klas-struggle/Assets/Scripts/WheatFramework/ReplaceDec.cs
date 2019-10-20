@@ -9,7 +9,7 @@ namespace Assets.Scripts.WheatFramework
     {
 
         public GameObject ObjectToReplace = null;
-        public List<GameObjList> Replacements;
+        public List<GameObjList> Replacements = new List<GameObjList>();
 
         public override async Task Decide(Answer answer)
         {

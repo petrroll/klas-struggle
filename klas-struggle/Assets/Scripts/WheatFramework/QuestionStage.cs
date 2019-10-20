@@ -8,7 +8,7 @@ namespace Assets.Scripts.WheatFramework
     {
         public bool ActiveOnStart = false;
         public bool FadeIn = true;
-        public Stage NextStage;
+        public Stage NextStage = null;
 
         internal Question[] Questions;
 
