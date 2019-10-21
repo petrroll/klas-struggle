@@ -44,7 +44,7 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             gameController = GameController.Get;
             moveController = this.GetComponent<MoveController>();
-            wheatFollowController = GetComponent<FollowController>();
+            wheatFollowController = GenWheat.gameObject.GetComponent<FollowController>();
 
             // initialize variables for collision warning box
             _boxCollider2D = this.GetComponent<BoxCollider2D>();
