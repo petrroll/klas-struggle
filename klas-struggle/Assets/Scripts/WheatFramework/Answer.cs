@@ -13,7 +13,9 @@ namespace Assets.Scripts.WheatFramework
 
         internal KeyCode AnswerKey;
 
-        public void OnCollisionEnter2D(Collision2D collision) => SelectCurrentAnswer();
+        public void OnMouseDown() => SelectCurrentAnswer();
+        public void OnCollisionEnter2D(Collision2D _) => SelectCurrentAnswer();
+        
         public void Update()
         {
             if (Input.GetKeyDown(AnswerKey))
