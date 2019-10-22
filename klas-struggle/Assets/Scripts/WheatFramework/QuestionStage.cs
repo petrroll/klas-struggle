@@ -33,8 +33,8 @@ namespace Assets.Scripts.WheatFramework
 
                 if (FadeIn) // set alpha to 0 -> slowly move to 1
                 {
-                    this.gameObject.SetFadeChildrenTexts(0); 
-                    this.gameObject.DOFadeChildrenTexts(1, 1);
+                    this.gameObject.SetFadeChildrenTextsAndSprites(0); 
+                    this.gameObject.DOFadeChildrenTextsAndSprites(1, 1);
                 }
             }
 
@@ -46,7 +46,7 @@ namespace Assets.Scripts.WheatFramework
 
             if (FadeIn) // fade out, alpha should already be at 1 -> fade to 0
             {
-                this.gameObject.DOFadeChildrenTexts(0, 1);
+                this.gameObject.DOFadeChildrenTextsAndSprites(0, 1);
                 await Task.Delay(1000);
             }
 

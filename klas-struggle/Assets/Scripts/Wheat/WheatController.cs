@@ -108,12 +108,12 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                 {
                     if (activeNow && !activePreviously) // fade new parts in -> set alpha to 0 & slowly move to 1
                     {
-                        objects[i].gameObject.SetFadeChildrenSprites(0);
-                        objects[i].gameObject.DOFadeChildrenSprites(1, 3);
+                        objects[i].gameObject.SetFadeChildrenTextsAndSprites(0);
+                        objects[i].gameObject.DOFadeChildrenTextsAndSprites(1, 3);
                     }
                     else if (!activeNow && activePreviously)
                     {
-                        objects[i].gameObject.DOFadeChildrenSprites(0, 3); // fade out, should already be visible -> just decrease alpha
+                        objects[i].gameObject.DOFadeChildrenTextsAndSprites(0, 3); // fade out, should already be visible -> just decrease alpha
                     }
                 }
             }

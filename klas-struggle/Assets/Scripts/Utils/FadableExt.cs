@@ -63,5 +63,17 @@ namespace Assets.Scripts.Utils
                 obj.SetFade(value);
             }
         }
+
+        public static void DOFadeChildrenTextsAndSprites(this GameObject go, float endValue, float duration)
+        {
+            DOFadeChildrenTexts(go, endValue, duration);
+            DOFadeChildrenSprites(go, endValue, duration);
+        }
+
+        public static void SetFadeChildrenTextsAndSprites(this GameObject go, float value)
+        {
+            SetFadeChildrenTexts(go, value);
+            SetFadeChildrenSprites(go, value);
+        }
     }
 }
