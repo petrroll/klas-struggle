@@ -90,10 +90,11 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             if (activatedObjIndex >= 0)
             {
                 var activatedObject = objects[activatedObjIndex];
-
                 AllignObjectsPlugWithPreviouslyActiveSocket(activatedObject);
-                var animationObj = activatedObject.GetComponentInChildren<Animation>(false);
-                animationObj?.StartAnimation();
+                foreach (var animation in activatedObject.GetComponentsInChildren<Animation>(false))
+                {
+                    animation.StartAnimation();
+                }
             }
 
             // enable activeObject from `objects` (current stage objects) and hide all other ones
@@ -124,10 +125,9 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         /// </summary>
         private void AllignObjectsPlugWithPreviouslyActiveSocket(GameObject gameObject)
         {
-            var connectionPlug = gameObject.GetComponentInChildren<ConnectPointPlug>(false);
-            if (connectionPlug != null)
+            var connectionPlugs = gameObject.GetComponentsInChildren<ConnectPointPlug>(false);
+            foreach(var connectionPlug in connectionPlugs)
             {
-
                 // Corresponding socket must be in a correct stage, on an active gameObject, must itself be active, and have the 
                 // same `.ConnectIndex` as `gameObject`'s plug. Keep the invariant there's always only one such socket.
                 var stageWithSocket = GetStageObjects(connectionPlug.SocketStageIndex);
@@ -141,7 +141,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                     if (desiredSocket == null) { continue; }
 
                     var transformDifference = connectionPlug.transform.position - desiredSocket.transform.position;
-                    gameObject.transform.position -= transformDifference;
+                    connectionPlug.transform.parent.position -= transformDifference;
                 }
             }
         }
