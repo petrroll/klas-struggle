@@ -55,7 +55,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             _warningSprite.color = IsInCollision() ? _warningSpriteColorVisible : _warningSpriteColorInvisible;
 
             // init generated instance
-            GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState();
+            GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState(initDebugState: true);
             GenWheat.InitAndEnable();
 
             // explicitely don't want to await

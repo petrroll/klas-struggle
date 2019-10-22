@@ -14,11 +14,17 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         public float Size = 1;
         public Vector3 Loc;
 
+        public WheatState() : this(false) { }
+        public WheatState(bool initDebugState)
+        {
+            if (initDebugState) { InitDebugState(); }
+        }
+
         internal void InitDebugState()
         {
-            Stage1Answer = 1;
-            Stage2Answer = 1;
-            Stage3Answer = 1;
+            Stage1Answer = 5;
+            Stage2Answer = 0;
+            Stage3Answer = 2;
             Stage4Answer = 1;
             Stage5Answer = 1;
         }
