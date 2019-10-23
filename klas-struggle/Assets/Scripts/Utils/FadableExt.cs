@@ -18,9 +18,9 @@ namespace Assets.Scripts.Utils
             target.color = color;
         }
 
-        public static void SetFadeChildrenSprites(this GameObject go, float value)
+        public static void SetFadeChildrenSprites(this GameObject go, float value, bool includeInactive)
         {
-            var sprites = go.GetComponentsInChildren<SpriteRenderer>(true);
+            var sprites = go.GetComponentsInChildren<SpriteRenderer>(includeInactive);
 
             foreach (var sprite in sprites)
             {
@@ -28,9 +28,9 @@ namespace Assets.Scripts.Utils
             }
         }
 
-        public static void DOFadeChildrenSprites(this GameObject go, float endValue, float duration)
+        public static void DOFadeChildrenSprites(this GameObject go, float endValue, float duration, bool includeInactive)
         {
-            var sprites = go.GetComponentsInChildren<SpriteRenderer>(true);
+            var sprites = go.GetComponentsInChildren<SpriteRenderer>(includeInactive);
 
             foreach (var sprite in sprites)
             {
@@ -45,9 +45,9 @@ namespace Assets.Scripts.Utils
 
         public static void SetFade(this TextMeshPro target, float value) => target.alpha = value;
 
-        public static void DOFadeChildrenTexts(this GameObject go, float endValue, float duration)
+        public static void DOFadeChildrenTexts(this GameObject go, float endValue, float duration, bool includeInactive)
         {
-            var objs = go.GetComponentsInChildren<TextMeshPro>(true);
+            var objs = go.GetComponentsInChildren<TextMeshPro>(includeInactive);
 
             foreach (var obj in objs)
             {
@@ -55,25 +55,25 @@ namespace Assets.Scripts.Utils
             }
         }
 
-        public static void SetFadeChildrenTexts(this GameObject go, float value)
+        public static void SetFadeChildrenTexts(this GameObject go, float value, bool includeInactive)
         {
-            var objs = go.GetComponentsInChildren<TextMeshPro>(true);
+            var objs = go.GetComponentsInChildren<TextMeshPro>(includeInactive);
             foreach (var obj in objs)
             {
                 obj.SetFade(value);
             }
         }
 
-        public static void DOFadeChildrenTextsAndSprites(this GameObject go, float endValue, float duration)
+        public static void DOFadeChildrenTextsAndSprites(this GameObject go, float endValue, float duration, bool includeInactive = true)
         {
-            DOFadeChildrenTexts(go, endValue, duration);
-            DOFadeChildrenSprites(go, endValue, duration);
+            DOFadeChildrenTexts(go, endValue, duration, includeInactive);
+            DOFadeChildrenSprites(go, endValue, duration, includeInactive);
         }
 
-        public static void SetFadeChildrenTextsAndSprites(this GameObject go, float value)
+        public static void SetFadeChildrenTextsAndSprites(this GameObject go, float value, bool includeInactive = true)
         {
-            SetFadeChildrenTexts(go, value);
-            SetFadeChildrenSprites(go, value);
+            SetFadeChildrenTexts(go, value, includeInactive);
+            SetFadeChildrenSprites(go, value, includeInactive);
         }
     }
 }

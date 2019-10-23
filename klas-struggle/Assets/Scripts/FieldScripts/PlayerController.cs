@@ -131,7 +131,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             // fade new instance in -> set alpha to 0 & slowly move to 1
             newInstace.gameObject.SetFadeChildrenTextsAndSprites(0);
-            newInstace.gameObject.DOFadeChildrenTextsAndSprites(1, 5);
+            newInstace.gameObject.DOFadeChildrenTextsAndSprites(1, 5, includeInactive: false);
         }
 
         public void Update()
