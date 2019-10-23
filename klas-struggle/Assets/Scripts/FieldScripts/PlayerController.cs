@@ -25,10 +25,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
-
-        SpriteRenderer _warningSprite;
-        Color _warningSpriteColorVisible;
-        Color _warningSpriteColorInvisible;
+        private HideableObject _collisionIndicator = null;
 
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
@@ -46,17 +43,16 @@ namespace Assets.Scripts.KlasStruggle.Field
             moveController = this.GetComponent<MoveController>();
             wheatFollowController = GenWheat.gameObject.GetComponent<FollowController>();
 
-            // initialize variables for collision warning box
-            _boxCollider2D = this.GetComponent<BoxCollider2D>();
-
-            _warningSprite = GetComponent<SpriteRenderer>();
-            _warningSpriteColorVisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.2f);
-            _warningSpriteColorInvisible = new Color(_warningSprite.color.r, _warningSprite.color.g, _warningSprite.color.b, 0.0f);
-            _warningSprite.color = IsInCollision() ? _warningSpriteColorVisible : _warningSpriteColorInvisible;
-
             // init generated instance
             GenWheat.State = gameController.DataStorage.GeneratedWheatState ?? new WheatState(initDebugState: true);
             GenWheat.InitAndEnable();
+
+            // initialize variables for collision warning
+            _boxCollider2D = this.GetComponent<BoxCollider2D>();
+            _collisionIndicator = GenWheat.CollisionIndicator;
+            _collisionIndicator.Enable();
+            if (IsInCollision()) { _collisionIndicator.Show(); }
+            else { _collisionIndicator.Hide(); }
 
             // explicitely don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
@@ -78,7 +74,6 @@ namespace Assets.Scripts.KlasStruggle.Field
             _inited = true; 
             moveController.enableMovement = true;
         }
-
 
         private async Task RootWheatAsync()
         {
@@ -137,11 +132,11 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         public void OnTriggerEnter2D(Collider2D _)
         {
-            if (IsInCollision() && !_rooted) { _warningSprite.color = _warningSpriteColorVisible; }
+            if (IsInCollision() && !_rooted) { _collisionIndicator.Show(); }
         }
         public void OnTriggerExit2D(Collider2D _)
         {
-            if (!IsInCollision()) { _warningSprite.color = _warningSpriteColorInvisible; }
+            if (!IsInCollision()) { _collisionIndicator.Hide(); }
         }
 
         bool IsInCollision() => _boxCollider2D.IsTouchingLayers();
