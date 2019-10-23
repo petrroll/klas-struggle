@@ -12,7 +12,7 @@ namespace Assets.Scripts.WheatFramework
         private void Init()
         {
             // assumes the order of retrieved components is the same as the order in Editor
-            var stages = GetComponentsInChildren<Stage>(true);
+            var stages = GetComponentsInChildren<Stage>(includeInactive: true);
 
             // Initialize questions stages subsequently their answers 
             for (int i = 0; i < stages.Length; i++)

@@ -64,7 +64,7 @@ namespace Assets.Scripts.WheatFramework
             Debug.Assert(Decision != null);
 
             // assumes the order of retrieved components is the same as the order in Editor
-            Questions = GetComponentsInChildren<Question>(true);
+            Questions = GetComponentsInChildren<Question>(includeInactive: true);
 
             // Initialize questions & subsequently their answers 
             for (int i = 0; i < Questions.Length; i++)

@@ -23,7 +23,7 @@ namespace Assets.Scripts.WheatFramework
         private void InitAnswers(Decision dec)
         {
             // assumes the order of retrieved components is the same as the order in Editor
-            Answers = GetComponentsInChildren<Answer>(true);
+            Answers = GetComponentsInChildren<Answer>(includeInactive: true);
 
             // Inits ids of all answers, must be called only after QuestionID and Decision has already been initialized.
             for (int i = 0; i < Answers.Length; i++)
