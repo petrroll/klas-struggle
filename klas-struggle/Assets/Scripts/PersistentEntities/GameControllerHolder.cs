@@ -9,19 +9,14 @@ namespace Assets.Scripts.KlasStruggle.Persistent
     {
         public GameController Controller;
         public bool LazyDownloadWheatsOnInit = true;
+        public bool ForceStatesFromOffline = false;
+        public 
 
         // Start is called before the first frame update
         void Start()
         {
             Controller = GameController.Get;
-            _ = Controller.InitAsync(LazyDownloadWheatsOnInit);
-        }
-
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            _ = Controller.InitAsync(LazyDownloadWheatsOnInit, ForceStatesFromOffline);
         }
     }
 }

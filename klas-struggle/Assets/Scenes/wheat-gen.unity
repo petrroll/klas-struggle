@@ -1732,6 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LazyDownloadWheatsOnInit: 1
+  ForceStatesFromOffline: 0
 --- !u!4 &1528299074
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Assets.Scripts.KlasStruggle.Wheat;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.KlasStruggle.Persistent
@@ -10,11 +12,12 @@ namespace Assets.Scripts.KlasStruggle.Persistent
     {
         bool _inited = false;
         static GameController _instance;
-
         public static GameController Get { get { if (_instance == null) { _instance = new GameController(); } return _instance; } }
 
         public FireBaseConnector FireBaseConnector { get; }
         public DataStorage DataStorage { get; }
+
+        internal bool StatesFromOnline { get; private set; }
 
         public GameController()
         {
@@ -22,20 +25,48 @@ namespace Assets.Scripts.KlasStruggle.Persistent
             DataStorage = new DataStorage();
         }
 
-        public async Task InitAsync(bool lazyDownloadWheatsOnInit)
+        public async Task InitAsync(bool downloadWheatsOnInit, bool forceStatesFromOffline)
         {
             if (_inited) { return; }
             _inited = true;
 
-            if (lazyDownloadWheatsOnInit) { await this.DownloadOtherWheatStatesAsync(); }
+            if (downloadWheatsOnInit) { await this.GetOtherWheatStatesAsync(forceStatesFromOffline); }
         }
 
-        public async Task DownloadOtherWheatStatesAsync()
+        public async Task GetOtherWheatStatesAsync(bool forceStatesFromOffline)
         {
-            var states = await FireBaseConnector.GetStatesAsync();
+            // Tries to download wheat-states from firebase:
+            // - doesn't work -> gets states from disk
+            // - when getting from firebase finishes -> commits the data only when disk-data haven't already been used
+            // NOTE: No need to be worried about `DataStorage.OtherWheatStatesOnline` race conditions -> this method
+            // will always be called on UI thread -> two calls can't interleave.
+            if (!forceStatesFromOffline)
+            {
+                var onlineStates = await FireBaseConnector.GetStatesFromFirebaseAsync();
+                Debug.Log($"Downloaded {onlineStates?.Count} states.");
 
-            Debug.Log($"Retrieved & instantiated {states.Count} states.");
-            DataStorage.OtherWheatStatesOnline = states;
+                if (DataStorage.OtherWheatStatesOnline == null && onlineStates != null)
+                {
+                    DataStorage.OtherWheatStatesOnline = onlineStates;
+                    StatesFromOnline = true;
+
+                    return;
+                }
+            }
+
+            var offlineStates = await FireBaseConnector.GetStatesFromDiskAsync("OfflineFields/klas-struggle-3d476-export");
+            Debug.Log($"Read from disk {offlineStates?.Count} states.");
+
+            if (offlineStates == null)
+            {
+                offlineStates = new List<WheatState>();
+                Debug.LogWarning("Couldn't get other wheat states from online/disk.");
+            }
+
+            DataStorage.OtherWheatStatesOnline = offlineStates;
+            StatesFromOnline = true;
+
+            return;
         }
     }
 }

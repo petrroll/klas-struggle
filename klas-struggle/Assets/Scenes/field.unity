@@ -432,7 +432,7 @@ MonoBehaviour:
   Cam: {fileID: 1106636968}
   SendState: 0
   CreateOtherWheats: 1
-  D_ForceDownloadAndWaitForOtherWheats: 1
+  D_ForceWaitUntilDownloadOtherWheatsFromFirebase: 0
   UnzoomToSizeRoot: 10
   UnzoomTimeRoot: 2.5
   UnzoomCoefInitial: 10
@@ -721,6 +721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LazyDownloadWheatsOnInit: 0
+  ForceStatesFromOffline: 0
 --- !u!4 &1438969425
 Transform:
   m_ObjectHideFlags: 0

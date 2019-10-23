@@ -18,7 +18,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         public bool SendState = true;
         public bool CreateOtherWheats = true;
-        public bool D_ForceDownloadAndWaitForOtherWheats = false;
+        public bool D_ForceWaitUntilDownloadOtherWheatsFromFirebase = false;
 
         private bool _otherWheatsDownloaded = false;
         private bool _inited = false;
@@ -91,28 +91,20 @@ namespace Assets.Scripts.KlasStruggle.Field
             // save current location to state and potentially send state
             // send state only when the other wheats came from firebase (-> reasonably sure there're no conflicts)
             GenWheat.SaveLoc();
-            if (SendState && _otherWheatsDownloaded) { await gameController.FireBaseConnector.PushStateAsync(GenWheat.State); }
+            if (SendState && _otherWheatsDownloaded) { await gameController.FireBaseConnector.PushStateToFirebaseAsync(GenWheat.State); }
         }
 
         private async Task InstantiateOtherWheatsAsync()
         {
             var states = gameController.DataStorage.OtherWheatStatesOnline;
-
-            if(states == null && D_ForceDownloadAndWaitForOtherWheats)
+            if (states == null)
             {
-                await gameController.DownloadOtherWheatStatesAsync();
+                // (Most probably from firebase) other wheat states not ready yet
+                // -> get offline data (quick) unless D_ForceWaitUntilDownloadOtherWheatsFromFirebase
+                await gameController.GetOtherWheatStatesAsync(forceStatesFromOffline: !D_ForceWaitUntilDownloadOtherWheatsFromFirebase);
                 states = gameController.DataStorage.OtherWheatStatesOnline;
             }
-
-            if (states != null)
-            {
-                _otherWheatsDownloaded = true;
-            }
-            else
-            {
-                // TODO: Get synthetic data?
-                states = new List<WheatState>();
-            }
+            _otherWheatsDownloaded = gameController.StatesFromOnline;
 
             foreach (var state in states)
             {
