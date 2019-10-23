@@ -9,10 +9,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
 {
     public class WheatController : MonoBehaviour
     {
-        public List<GameObject> Stage1;
-        public List<GameObject> Stage2;
-        public List<GameObject> Stage3;
-        public List<GameObject> Stage4;
+        private List<List<GameObject>> StagesObjects = new List<List<GameObject>>();
 
         public bool InitDebugState = false;
         public bool GenerateAsPlayer = false;
@@ -32,10 +29,27 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             if (_inited) { return; }
             _inited = true;
 
-            if (InitDebugState) { this.State.InitDebugState(); }
+            InitStagesAndStageObjects();
 
+            if (InitDebugState) { this.State.InitDebugState(); }
             ApplyState();
+
             gameObject.SetActive(true);
+        }
+
+        private void InitStagesAndStageObjects()
+        {
+            // Inits gameObjects for stages: 
+            // - all children with `WheatStage` as stage & under each of them `WheatStageObject` as an option.
+            // assumes the order of retrieved components is the same as the order in Editor
+            foreach (var stage in GetComponentsInChildren<WheatStage>(includeInactive: true).Where(st => st.Enabled))
+            {
+                // assumes the order of retrieved components is the same as the order in Editor
+                var stageObjects = stage.gameObject.GetComponentsInChildren<WheatStageObject>(includeInactive: true)
+                    .Where(stObj => stObj.Enabled)
+                    .Select(stageObj => stageObj.gameObject).ToList();
+                StagesObjects.Add(stageObjects);
+            }
         }
 
         /// <summary>
@@ -188,13 +202,10 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             switch (stageIndex)
             {
                 case 1:
-                    return Stage1;
                 case 2:
-                    return Stage2;
                 case 3:
-                    return Stage3;
                 case 4:
-                    return Stage4;
+                    return StagesObjects[stageIndex - 1];
                 default:
                     throw new InvalidOperationException();
             }
