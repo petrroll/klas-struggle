@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: ConnectPointSocket
   m_TagString: Untagged
-  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2800000, guid: 5db10c834f6d15543952dc8a0699f9fb, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43,5 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275d38113c8665a42b673421994a7e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SocketStageIndex: 1
   ConnectIndex: 1
