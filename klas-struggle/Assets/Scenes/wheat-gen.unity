@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1548295
 Transform:
   m_ObjectHideFlags: 0
@@ -356,6 +356,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Question2
       objectReference: {fileID: 0}
+    - target: {fileID: 2737862542896887472, guid: de7282bbb27079541aa3cc9e50478614,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2737862542896887473, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,7 +553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &142659902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,7 +2124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1992444979
 Transform:
   m_ObjectHideFlags: 0
@@ -2175,6 +2180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Question2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737862542896887472, guid: de7282bbb27079541aa3cc9e50478614,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2737862542896887473, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
@@ -2343,7 +2353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2052261946
 Transform:
   m_ObjectHideFlags: 0
@@ -2455,20 +2465,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2737862542863189739, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2737862543451785709, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543451785711, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_text
-      value: Knitted blanket
       objectReference: {fileID: 0}
     - target: {fileID: 2737862543451785711, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
@@ -2479,16 +2479,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543451785711, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543451785711, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2737862543881460707, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
@@ -2497,11 +2487,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
         type: 3}
-      propertyPath: m_text
-      value: "Sister\u2019s cat purring on your lap"
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
@@ -2509,31 +2494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737862543881460701, guid: de7282bbb27079541aa3cc9e50478614,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7282bbb27079541aa3cc9e50478614, type: 3}
