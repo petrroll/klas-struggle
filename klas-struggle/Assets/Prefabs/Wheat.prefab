@@ -4076,7 +4076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitDebugState: 0
-  GenerateAsPlayer: 1
+  GenerateAsPlayer: 0
   State:
     Stage1Answer: -1
     Stage2Answer: -1
