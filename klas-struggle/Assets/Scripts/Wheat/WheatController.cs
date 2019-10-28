@@ -113,7 +113,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             {
                 var activatedObject = objects[activatedObjIndex];
                 AllignObjectsPlugWithPreviouslyActiveSocket(activatedObject);
-                foreach (var animation in activatedObject.GetComponentsInChildren<Animation>(false))
+                foreach (var animation in activatedObject.GetComponentsInChildren<Animation>(includeInactive: false))
                 {
                     animation.StartAnimation();
                 }
@@ -131,8 +131,8 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                 {
                     if (activeNow && !activePreviously) // fade new parts in -> set alpha to 0 & slowly move to 1
                     {
-                        objects[i].gameObject.SetFadeChildrenTextsAndSprites(0);
-                        objects[i].gameObject.DOFadeChildrenTextsAndSprites(1, 3);
+                        objects[i].gameObject.SetFadeChildrenTextsAndSprites(0, includeInactive: false);
+                        objects[i].gameObject.DOFadeChildrenTextsAndSprites(1, 3, includeInactive: false);
                     }
                     else if (!activeNow && activePreviously)
                     {
