@@ -1,27 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class IntroScreenSwitch : MonoBehaviour
+namespace Assets.Scripts.KlasStruggle.Intro
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public class IntroScreenSwitch : MonoBehaviour
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.anyKeyDown)
+        // Update is called once per frame
+        void Update()
         {
-            Invoke("SwitchScene",3);
+            if (Input.anyKeyDown)
+            {
+                Invoke("SwitchScene", 3);
+            }
         }
 
-    }
-
-    void SwitchScene() {
-        SceneManager.LoadScene("wheat-gen");
+        void SwitchScene()
+        {
+            SceneManager.LoadScene("wheat-gen");
+        }
     }
 }
