@@ -16,7 +16,7 @@ public class IntroScreenSwitch : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            Invoke("SwitchScene",0);
+            Invoke("SwitchScene",3);
         }
 
     }
