@@ -25,7 +25,6 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
-        private HideableObject _collisionIndicator = null;
 
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
@@ -36,6 +35,9 @@ namespace Assets.Scripts.KlasStruggle.Field
         private GameController gameController;
         private MoveController moveController;
         private FollowController wheatFollowController;
+
+
+        private Component[] wheatSpriteRenderers;
 
         public void Start()
         {
@@ -49,10 +51,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             // initialize variables for collision warning
             _boxCollider2D = this.GetComponent<BoxCollider2D>();
-            _collisionIndicator = GenWheat.CollisionIndicator;
-            _collisionIndicator.Enable();
-            if (IsInCollision()) { _collisionIndicator.Show(); }
-            else { _collisionIndicator.Hide(); }
+
 
             // explicitely don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
@@ -73,6 +72,8 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             _inited = true; 
             moveController.enableMovement = true;
+
+            wheatSpriteRenderers = GenWheat.GetComponentsInChildren<SpriteRenderer>();
         }
 
         private async Task RootWheatAsync()
@@ -132,13 +133,23 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         public void OnTriggerEnter2D(Collider2D _)
         {
-            if (IsInCollision() && !_rooted) { _collisionIndicator.Show(); }
+            if (IsInCollision() && !_rooted) { PaintRed(); }
         }
         public void OnTriggerExit2D(Collider2D _)
         {
-            if (!IsInCollision()) { _collisionIndicator.Hide(); }
+            if (!IsInCollision()) { PaintWhite(); }
         }
 
         bool IsInCollision() => _boxCollider2D.IsTouchingLayers();
+
+        public void PaintRed()
+        {
+            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.red;}
+        }
+
+        public void PaintWhite()
+        {
+            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.white;}
+        }
     }
 }

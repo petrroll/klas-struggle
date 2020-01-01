@@ -10,7 +10,6 @@ namespace Assets.Scripts.KlasStruggle.Wheat
     public class WheatController : MonoBehaviour
     {
         private List<List<GameObject>> StagesObjects = new List<List<GameObject>>();
-        internal HideableObject CollisionIndicator = null;
 
         public bool InitDebugState = false;
         public bool GenerateAsPlayer = false;
@@ -30,7 +29,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             if (_inited) { return; }
             _inited = true;
 
-            InitCollisionIndicator();
+           
             InitStagesAndStageObjects();
 
             if (InitDebugState) { this.State.InitDebugState(); }
@@ -39,11 +38,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             gameObject.SetActive(true);
         }
 
-        private void InitCollisionIndicator()
-        {
-            CollisionIndicator = this.GetComponentInChildren<HideableObject>();
-            CollisionIndicator.gameObject.SetActive(false);
-        }
+       
 
         private void InitStagesAndStageObjects()
         {
