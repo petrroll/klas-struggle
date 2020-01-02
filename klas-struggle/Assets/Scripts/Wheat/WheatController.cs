@@ -29,7 +29,6 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             if (_inited) { return; }
             _inited = true;
 
-           
             InitStagesAndStageObjects();
 
             if (InitDebugState) { this.State.InitDebugState(); }
@@ -37,8 +36,6 @@ namespace Assets.Scripts.KlasStruggle.Wheat
 
             gameObject.SetActive(true);
         }
-
-       
 
         private void InitStagesAndStageObjects()
         {
@@ -162,7 +159,6 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                 }
             }
         }
-
 
         void ApplySize() => transform.localScale = new Vector3(State.Size, State.Size);
 

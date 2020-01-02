@@ -3,6 +3,7 @@ using Assets.Scripts.KlasStruggle.Wheat;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Utils;
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
+        private Nullable<bool> _collisionIndicatorWasVisible = null;
 
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
@@ -36,8 +38,7 @@ namespace Assets.Scripts.KlasStruggle.Field
         private MoveController moveController;
         private FollowController wheatFollowController;
 
-
-        private Component[] wheatSpriteRenderers;
+        private SpriteRenderer[] wheatSpriteRenderers;
 
         public void Start()
         {
@@ -52,6 +53,10 @@ namespace Assets.Scripts.KlasStruggle.Field
             // initialize variables for collision warning
             _boxCollider2D = this.GetComponent<BoxCollider2D>();
 
+            // update collision indicator -> show it if we can't root on intial location
+            // TODO: Have different system for showing the initial can't root to `can't root due to collision with other wheat`?
+            wheatSpriteRenderers = GenWheat.GetComponentsInChildren<SpriteRenderer>();
+            UpdateCollisionIndicator();
 
             // explicitely don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
@@ -72,8 +77,6 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             _inited = true; 
             moveController.enableMovement = true;
-
-            wheatSpriteRenderers = GenWheat.GetComponentsInChildren<SpriteRenderer>();
         }
 
         private async Task RootWheatAsync()
@@ -131,25 +134,34 @@ namespace Assets.Scripts.KlasStruggle.Field
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D _)
+        private void UpdateCollisionIndicator()
         {
-            if (IsInCollision() && !_rooted) { PaintRed(); }
-        }
-        public void OnTriggerExit2D(Collider2D _)
-        {
-            if (!IsInCollision()) { PaintWhite(); }
+            bool isInCollision = IsInCollision();
+
+            if (isInCollision && _collisionIndicatorWasVisible != true && !_rooted) { _collisionIndicatorWasVisible = true; PaintRed(); }
+            else if (!isInCollision && _collisionIndicatorWasVisible != false) { _collisionIndicatorWasVisible = false; PaintWhite(); }
         }
 
-        bool IsInCollision() => _boxCollider2D.IsTouchingLayers();
-
-        public void PaintRed()
+        private void PaintRed()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.red;}
         }
 
-        public void PaintWhite()
+        private void PaintWhite()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.white;}
         }
+
+        public void OnTriggerEnter2D(Collider2D _)
+        {
+            UpdateCollisionIndicator();
+        }
+
+        public void OnTriggerExit2D(Collider2D _)
+        {
+            UpdateCollisionIndicator();
+        }
+
+        private bool IsInCollision() => _boxCollider2D.IsTouchingLayers();
     }
 }
