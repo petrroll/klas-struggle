@@ -3,8 +3,6 @@ using Assets.Scripts.KlasStruggle.Wheat;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Utils;
 using DG.Tweening;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -26,7 +24,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
-        private Nullable<bool> _collisionIndicatorWasVisible = null;
+        private bool? _collisionIndicatorWasVisible = null;
 
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
