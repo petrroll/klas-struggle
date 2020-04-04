@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Utils;
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Assets.Scripts.WheatFramework
         public bool ActiveOnStart = false;
         public bool FadeIn = true;
         public Stage NextStage = null;
+
+        public float FadeInTime = 1.0f;
+        public float FadeOutTime = 1.0f;
 
         internal Question[] Questions;
 
@@ -34,10 +38,9 @@ namespace Assets.Scripts.WheatFramework
                 if (FadeIn) // set alpha to 0 -> slowly move to 1
                 {
                     this.gameObject.SetFadeChildrenTextsAndSprites(0); 
-                    this.gameObject.DOFadeChildrenTextsAndSprites(1, 1);
+                    this.gameObject.DOFadeChildrenTextsAndSprites(endValue: 1, FadeInTime);
                 }
             }
-
         }
 
         public override async Task FinishStageAsync()
@@ -46,8 +49,8 @@ namespace Assets.Scripts.WheatFramework
 
             if (FadeIn) // fade out, alpha should already be at 1 -> fade to 0
             {
-                this.gameObject.DOFadeChildrenTextsAndSprites(0, 1);
-                await Task.Delay(1000);
+                this.gameObject.DOFadeChildrenTextsAndSprites(0, FadeOutTime);
+                await Task.Delay(Convert.ToInt32(1000 * FadeOutTime));
             }
 
             // disable current stage's gameObject and activate next stage 
