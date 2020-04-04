@@ -27,6 +27,8 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             Stage3Answer = 2;
             Stage4Answer = 1;
             Stage5Answer = 1;
+
+            Size = 1.2f;
         }
     }
 }

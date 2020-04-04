@@ -56,7 +56,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             wheatSpriteRenderers = GenWheat.GetComponentsInChildren<SpriteRenderer>();
             UpdateCollisionIndicator();
 
-            // explicitely don't want to await
+            // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
             // fire initial unzoom transition to field & set _inited & enable movement after its done
@@ -64,6 +64,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             Cam.orthographicSize = origOrthoSize / UnzoomCoefInitial;
             Cam.DOOrthoSize(origOrthoSize, UnzoomTimeInit);
 
+            // update scale (make smaller & gradually upscale) of player's wheat to match unzooming -> illusion wheat is growing into the field 
             var origScale = GenWheat.transform.localScale;
             GenWheat.transform.localScale = origScale / UnzoomCoefInitial;
             var tweener =  GenWheat.transform.DOScale(origScale, UnzoomTimeInit);

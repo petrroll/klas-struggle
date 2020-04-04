@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Utils;
 using Assets.Scripts.WheatFramework;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Assets.Scripts.KlasStruggle.Wheat
 {
     public class WheatController : MonoBehaviour
     {
+        private const float SizeChangeDuration = 1f;
         private List<List<GameObject>> StagesObjects = new List<List<GameObject>>();
 
         public bool InitDebugState = false;
@@ -85,7 +87,8 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                     ApplyStageResult(stageIndex);
                     break;
                 case 5:
-                    State.Size = answer.Id == 0 ? 1 : 1.2f;
+                    float newSize = 1 + (answer.Id + answer.Question.Id) / 10f;
+                    State.Size = newSize;
                     ApplySize();
                     break;
                 default:
@@ -160,7 +163,18 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             }
         }
 
-        void ApplySize() => transform.localScale = new Vector3(State.Size, State.Size);
+        void ApplySize()
+        {
+            Vector3 newLocalScale = new Vector3(State.Size, State.Size);
+            if (GenerateAsPlayer)
+            {
+                transform.DOScale(newLocalScale, SizeChangeDuration);
+            }
+            else
+            {
+                transform.localScale = newLocalScale;
+            }
+        }
 
         void ApplyLoc() => gameObject.transform.localPosition = State.Loc;
 
