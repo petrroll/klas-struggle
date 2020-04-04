@@ -7,7 +7,7 @@ namespace Assets.Scripts.KlasStruggle.Persistent
         // Start is called before the first frame update
         void Start()
         {
-            GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
+            GameObject.FindGameObjectWithTag("Music")?.GetComponent<MusicClass>()?.PlayMusic();
         }
 
         // Update is called once per frame
