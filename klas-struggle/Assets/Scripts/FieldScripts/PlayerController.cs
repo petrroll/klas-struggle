@@ -26,9 +26,10 @@ namespace Assets.Scripts.KlasStruggle.Field
         BoxCollider2D _boxCollider2D = null;
         private bool? _collisionIndicatorWasVisible = null;
 
+      
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
-
+        public float UnoomWait = 1f;
         public float UnzoomCoefInitial = 10;
         public float UnzoomTimeInit = 5f;
 
@@ -60,17 +61,17 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
             // fire initial unzoom transition to field & set _inited & enable movement after its done
-            var origOrthoSize = Cam.orthographicSize;
-            Cam.orthographicSize = origOrthoSize / UnzoomCoefInitial;
-            Cam.DOOrthoSize(origOrthoSize, UnzoomTimeInit);
+            var newOrthoSize = Cam.orthographicSize * UnzoomCoefInitial;
+            Cam.DOOrthoSize(newOrthoSize, UnzoomTimeInit);
 
             // update scale (make smaller & gradually upscale) of player's wheat to match unzooming -> illusion wheat is growing into the field 
-            var origScale = GenWheat.transform.localScale;
-            GenWheat.transform.localScale = origScale / UnzoomCoefInitial;
-            var tweener =  GenWheat.transform.DOScale(origScale, UnzoomTimeInit);
+            var newScale = GenWheat.transform.localScale * UnzoomCoefInitial;
+            var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
 
-            tweener.OnComplete(InitComplete); 
+            tweener.OnComplete(InitComplete);
         }
+
+
 
         private void InitComplete()
         {
@@ -122,6 +123,8 @@ namespace Assets.Scripts.KlasStruggle.Field
             // fade new instance in -> set alpha to 0 & slowly move to 1
             newInstace.gameObject.SetFadeChildrenTextsAndSprites(0);
             newInstace.gameObject.DOFadeChildrenTextsAndSprites(1, 5, includeInactive: false);
+
+            newInstace.gameObject.transform.localScale *= UnzoomCoefInitial;
         }
 
         public void Update()
