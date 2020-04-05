@@ -60,14 +60,14 @@ namespace Assets.Scripts.KlasStruggle.Field
             // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
-            // fire initial unzoom transition to field & set _inited & enable movement after its done
+            // fire unzoom transition to field & incrase scale of generated wheat to create illusion of it growing
             var newOrthoSize = Cam.orthographicSize * UnzoomCoefInitial;
             Cam.DOOrthoSize(newOrthoSize, UnzoomTimeInit);
 
-            // update scale (make smaller & gradually upscale) of player's wheat to match unzooming -> illusion wheat is growing into the field 
             var newScale = GenWheat.transform.localScale * UnzoomCoefInitial;
             var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
-
+            
+            // set _inited & enable movement after the transitions above are done
             tweener.OnComplete(InitComplete);
         }
 
@@ -124,6 +124,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             newInstace.gameObject.SetFadeChildrenTextsAndSprites(0);
             newInstace.gameObject.DOFadeChildrenTextsAndSprites(1, 5, includeInactive: false);
 
+            // need to update scale of other wheats to match final scale of generated wheat (after it grows to final size)
             newInstace.gameObject.transform.localScale *= UnzoomCoefInitial;
         }
 
