@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 namespace Assets.Scripts.AnimsEtc
 {
     public class StopMotionScript : MonoBehaviour
     {
-        public Vector3 Step1;
-        public Vector3 Step2;
-        public Vector3 Step3;
-        public Vector3 Step4;
+        private Vector3 TempPosition;
+        public float yDifference;
+        public float xDifference;
 
         public bool ContinueCoroutine = true;
         public float StepLength = 1f;
 
+        public int StepCount = 1;
         private int CoroutineStep = 0;
 
+        void Start()
+        {
+            TempPosition = transform.position;
+        }
         // Update is called once per frame
         void MotionStepMake(Vector3 Step)
         {
@@ -30,11 +35,8 @@ namespace Assets.Scripts.AnimsEtc
                 Debug.LogWarning($"MakeMotion: {CoroutineStep}");
 
                 CoroutineStep++;
-                if (CoroutineStep == 1) { MotionStepMake(Step1); }
-                else if (CoroutineStep == 2) { MotionStepMake(Step2); }
-                else if (CoroutineStep == 3) { MotionStepMake(Step3); }
-                else if (CoroutineStep == 4) { MotionStepMake(Step4); }
-                else if (CoroutineStep == 5) { ContinueCoroutine = false; }
+                if (CoroutineStep <= StepCount) { TempPosition.y += yDifference; TempPosition.x += xDifference; transform.position = TempPosition; Debug.LogWarning($"MakeMotion: {transform.position}"); }
+                else { ContinueCoroutine = false; }
 
                 yield return new WaitForSeconds(StepLength);
             }
