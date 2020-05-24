@@ -60,19 +60,30 @@ namespace Assets.Scripts.KlasStruggle.Field
             // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
+            Invoke("UnZoomCamera", 0.5f);
+
+
+        }
+
+
+        private void UnZoomCamera()
+        {
             // fire unzoom transition to field & incrase scale of generated wheat to create illusion of it growing
             var newOrthoSize = Cam.orthographicSize * UnzoomCoefInitial;
             Cam.DOOrthoSize(newOrthoSize, UnzoomTimeInit);
 
+            Invoke("ScaleWheat", 0.3f);
+            
+        }
+
+        private void ScaleWheat()
+        {
             var newScale = GenWheat.transform.localScale * UnzoomCoefInitial;
             var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
-            
+
             // set _inited & enable movement after the transitions above are done
             tweener.OnComplete(InitComplete);
         }
-
-
-
         private void InitComplete()
         {
             _inited = true; 
