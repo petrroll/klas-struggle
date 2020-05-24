@@ -60,9 +60,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
-            Invoke("UnZoomCamera", 0.5f);
-
-
+            Invoke(nameof(UnZoomCamera), 0.5f);
         }
 
 
@@ -72,8 +70,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             var newOrthoSize = Cam.orthographicSize * UnzoomCoefInitial;
             Cam.DOOrthoSize(newOrthoSize, UnzoomTimeInit);
 
-            Invoke("ScaleWheat", 0.3f);
-            
+            Invoke(nameof(ScaleWheat), 0.3f);
         }
 
         private void ScaleWheat()

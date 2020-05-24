@@ -1,44 +1,45 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 namespace Assets.Scripts.AnimsEtc
 {
     public class StopMotionScript : MonoBehaviour
     {
-        private Vector3 TempPosition;
-        public float yDifference;
-        public float xDifference;
-
-        public bool ContinueCoroutine = true;
-        public float StepLength = 1f;
-
+        public bool ContinueStopMotion = true;
+        public float StepTime = 1f;
         public int StepCount = 1;
-        private int CoroutineStep = 0;
+
+        public float StepYDiff;
+        public float StepXDiff;
+
+        private int coroutineStep = 0;
+        private Vector3 currentPosition;
+
 
         void Start()
         {
-            TempPosition = transform.position;
-        }
-        // Update is called once per frame
-        void MotionStepMake(Vector3 Step)
-        {
-            transform.position = Step;
+            currentPosition = transform.position;
         }
 
         public IEnumerator MakeMotion()
         {
-            Debug.LogWarning("MakeMotion");
-            while (ContinueCoroutine)
+            Debug.Log("MakeMotion");
+            while (ContinueStopMotion)
             {
-                Debug.LogWarning($"MakeMotion: {CoroutineStep}");
+                Debug.Log($"MakeMotion: {coroutineStep}");
 
-                CoroutineStep++;
-                if (CoroutineStep <= StepCount) { TempPosition.y += yDifference; TempPosition.x += xDifference; transform.position = TempPosition; Debug.LogWarning($"MakeMotion: {transform.position}"); }
-                else { ContinueCoroutine = false; }
+                coroutineStep++;
+                if (coroutineStep <= StepCount) 
+                { 
+                    currentPosition.y += StepYDiff; 
+                    currentPosition.x += StepXDiff; 
+                    
+                    transform.position = currentPosition; 
+                    Debug.Log($"MakeMotion: {transform.position}"); 
+                }
+                else { ContinueStopMotion = false; }
 
-                yield return new WaitForSeconds(StepLength);
+                yield return new WaitForSeconds(StepTime);
             }
         }
     }
