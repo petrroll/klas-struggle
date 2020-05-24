@@ -3,6 +3,7 @@ using Assets.Scripts.KlasStruggle.Wheat;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Utils;
 using DG.Tweening;
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -60,27 +61,28 @@ namespace Assets.Scripts.KlasStruggle.Field
             // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
-            Invoke(nameof(UnZoomCamera), 0.5f);
+            // do animations and finish init
+            _ = RescaleWheatUnzoomToFieldAndFinishInit();
         }
 
-
-        private void UnZoomCamera()
+        private async Task RescaleWheatUnzoomToFieldAndFinishInit()
         {
-            // fire unzoom transition to field & incrase scale of generated wheat to create illusion of it growing
+            await Task.Delay(Convert.ToInt32(1000 * 0.5f));
+
+            // fire unzoom transition to field  
             var newOrthoSize = Cam.orthographicSize * UnzoomCoefInitial;
             Cam.DOOrthoSize(newOrthoSize, UnzoomTimeInit);
 
-            Invoke(nameof(ScaleWheat), 0.3f);
-        }
+            await Task.Delay(Convert.ToInt32(1000 * 0.3f));
 
-        private void ScaleWheat()
-        {
+            // incrase scale of generated wheat to create illusion of it growing
             var newScale = GenWheat.transform.localScale * UnzoomCoefInitial;
             var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
 
-            // set _inited & enable movement after the transitions above are done
+            // finish init after animations (asume all take the same amount of time) complete
             tweener.OnComplete(InitComplete);
         }
+
         private void InitComplete()
         {
             _inited = true; 

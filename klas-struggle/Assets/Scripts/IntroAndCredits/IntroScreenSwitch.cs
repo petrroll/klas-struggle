@@ -5,12 +5,14 @@ namespace Assets.Scripts.KlasStruggle.Intro
 {
     public class IntroScreenSwitch : MonoBehaviour
     {
+        public int IntroBeforeNextSceneDelay = 3;
+
         // Update is called once per frame
         void Update()
         {
             if (Input.anyKeyDown)
             {
-                Invoke("SwitchScene", 3);
+                Invoke(nameof(SwitchScene), IntroBeforeNextSceneDelay);
             }
         }
 
