@@ -10,11 +10,10 @@ namespace Assets.Scripts.AnimsEtc
         public float StepTime = 1f;
         public int StepCount = 1;
 
+        public Vector2 StepDiff;
+
         public int StepFadeOutStart = -1;
         public float FadeOutTime = 2.0f;
-
-        public float StepYDiff;
-        public float StepXDiff;
 
         private int coroutineStep = 0;
         private Vector3 currentPosition;
@@ -40,8 +39,8 @@ namespace Assets.Scripts.AnimsEtc
 
                 if (coroutineStep <= StepCount) 
                 { 
-                    currentPosition.y += StepYDiff; 
-                    currentPosition.x += StepXDiff; 
+                    currentPosition.y += StepDiff.y; 
+                    currentPosition.x += StepDiff.x; 
                     
                     transform.position = currentPosition; 
                     Debug.Log($"MakeMotion: {transform.position}"); 
