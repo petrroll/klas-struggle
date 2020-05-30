@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Utils;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.AnimsEtc
@@ -8,6 +9,9 @@ namespace Assets.Scripts.AnimsEtc
         public bool ContinueStopMotion = true;
         public float StepTime = 1f;
         public int StepCount = 1;
+
+        public int StepFadeOutStart = -1;
+        public float FadeOutTime = 2.0f;
 
         public float StepYDiff;
         public float StepXDiff;
@@ -23,12 +27,17 @@ namespace Assets.Scripts.AnimsEtc
 
         public IEnumerator MakeMotion()
         {
+
             Debug.Log("MakeMotion");
             while (ContinueStopMotion)
             {
                 Debug.Log($"MakeMotion: {coroutineStep}");
 
-                coroutineStep++;
+                if (coroutineStep == StepFadeOutStart)
+                {
+                    gameObject.DOFadeChildrenSprites(0.0f, FadeOutTime, false);
+                }
+
                 if (coroutineStep <= StepCount) 
                 { 
                     currentPosition.y += StepYDiff; 
@@ -39,6 +48,7 @@ namespace Assets.Scripts.AnimsEtc
                 }
                 else { ContinueStopMotion = false; }
 
+                coroutineStep++;
                 yield return new WaitForSeconds(StepTime);
             }
         }
