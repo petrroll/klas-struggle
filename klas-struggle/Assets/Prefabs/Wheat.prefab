@@ -47,6 +47,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -58,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -119,14 +121,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125787755}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6490721, w: 0.7607269}
-  m_LocalPosition: {x: 60.4, y: -6.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.036011185, w: 0.9993514}
+  m_LocalPosition: {x: 6.3, y: 68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333295632461980869}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -80.943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.1270003}
 --- !u!212 &125787757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141,6 +143,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -152,6 +155,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -237,6 +241,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -248,6 +253,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -331,6 +337,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -342,6 +349,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -487,6 +495,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -498,6 +507,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -559,14 +569,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944076706}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.9, y: 7.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9900048, w: -0.14103389}
+  m_LocalPosition: {x: 30.900002, y: 7.2999983, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4786667740772136402}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 196.215}
 --- !u!114 &6467140959764895839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,6 +604,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -605,6 +616,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -708,7 +720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239458996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.0176, y: -11.007, z: 0}
+  m_LocalPosition: {x: -5.01, y: -14.94, z: 0}
   m_LocalScale: {x: 0.37063602, y: 0.37063602, z: 0.37063602}
   m_Children:
   - {fileID: 1439685611}
@@ -763,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379714475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.6, y: 39.6, z: 0}
+  m_LocalPosition: {x: 10.6, y: 89.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 762734126180917999}
@@ -784,6 +796,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -795,6 +808,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -857,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439685610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.64, y: 1.73, z: 0}
+  m_LocalPosition: {x: 16.3, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8034434987984710301}
@@ -878,6 +892,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -889,6 +904,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -972,6 +988,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -983,6 +1000,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1066,6 +1084,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1077,6 +1096,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1214,6 +1234,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1225,6 +1246,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1310,6 +1332,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1321,6 +1344,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1382,14 +1406,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158006425578509792}
-  m_LocalRotation: {x: -0, y: -0, z: -0.10813071, w: 0.99413675}
-  m_LocalPosition: {x: 102, y: 55.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9952843, w: -0.09700069}
+  m_LocalPosition: {x: 102, y: 55.700005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4275231497146719618}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.415001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 191.133}
 --- !u!212 &5530609407824350873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1404,6 +1428,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1415,6 +1440,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1476,14 +1502,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452441452614209064}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.6, y: 55.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9956038, w: 0.09366498}
+  m_LocalPosition: {x: 76.600006, y: 55.300007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7426781895332905817}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -169.251}
 --- !u!212 &8521763902780062192
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1498,6 +1524,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1509,6 +1536,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1570,14 +1598,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679117496644906602}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.97599447, w: 0.21779528}
   m_LocalPosition: {x: 94, y: 28.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 113960800576797658}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 154.841}
 --- !u!212 &3536761221935191841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1592,6 +1620,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1603,6 +1632,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1686,6 +1716,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1697,6 +1728,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1780,6 +1812,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1791,6 +1824,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1874,6 +1908,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1885,6 +1920,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1968,6 +2004,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1979,6 +2016,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2040,14 +2078,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2179358605118673925}
-  m_LocalRotation: {x: -0, y: -0, z: -0.10813071, w: 0.99413675}
-  m_LocalPosition: {x: 54.7, y: 57.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9749529, w: 0.22241157}
+  m_LocalPosition: {x: 54.700005, y: 57.6, z: 0}
+  m_LocalScale: {x: 1.1841, y: 1.1841, z: 1.1841}
   m_Children:
   - {fileID: 8696078595935278861}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.415001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 154.29901}
 --- !u!212 &3962076585817722703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2062,6 +2100,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2073,6 +2112,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2156,6 +2196,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2167,6 +2208,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2250,6 +2292,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2261,6 +2304,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2323,7 +2367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3289315037632315066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.77, y: -8.27, z: 0}
+  m_LocalPosition: {x: 1.9, y: 2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1118338517601387218}
@@ -2344,6 +2388,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2355,6 +2400,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2418,7 +2464,7 @@ Transform:
   m_GameObject: {fileID: 3735627852655519779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 66.7, y: 5.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4843, y: 1.4843, z: 1.4843}
   m_Children:
   - {fileID: 2664833980950945707}
   m_Father: {fileID: 575927113}
@@ -2438,6 +2484,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2449,6 +2496,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2510,14 +2558,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3858618650808699569}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9974007, w: 0.07205501}
   m_LocalPosition: {x: 44.4, y: 76.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5253902956527535266}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -171.73601}
 --- !u!212 &8201667157596476314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2532,6 +2580,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2543,6 +2592,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2628,6 +2678,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2639,6 +2690,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2722,6 +2774,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2733,6 +2786,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2816,6 +2870,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2827,6 +2882,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2888,14 +2944,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5286314727369218806}
-  m_LocalRotation: {x: -0, y: -0, z: -0.10813071, w: 0.99413675}
-  m_LocalPosition: {x: 25.7, y: 53.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.01296512, w: 0.99991596}
+  m_LocalPosition: {x: 25.7, y: 53.200005, z: 0}
+  m_LocalScale: {x: 2.0444, y: 2.0444, z: 2.0444}
   m_Children:
   - {fileID: 8959535940839237079}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -12.415001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.4860001}
 --- !u!212 &3313963145571017999
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2910,6 +2966,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2921,6 +2978,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3006,6 +3064,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3017,6 +3076,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3102,6 +3162,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3113,6 +3174,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3196,6 +3258,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3207,6 +3270,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3290,6 +3354,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3301,6 +3366,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3362,14 +3428,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6144528288141203492}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 7.9, y: 39.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3353257256419516528}
   m_Father: {fileID: 1188786956}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &8912989339491664958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3384,6 +3450,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3395,6 +3462,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3480,6 +3548,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3491,6 +3560,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3574,6 +3644,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3585,6 +3656,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3668,6 +3740,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3679,6 +3752,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3742,7 +3816,7 @@ Transform:
   m_GameObject: {fileID: 7390912261008340372}
   m_LocalRotation: {x: -0, y: -0, z: -0.10813071, w: 0.99413675}
   m_LocalPosition: {x: 30.5, y: 36.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0489, y: 2.0489, z: 2.0489}
   m_Children:
   - {fileID: 3236167687903151149}
   m_Father: {fileID: 1188786956}
@@ -3762,6 +3836,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3773,6 +3848,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3856,6 +3932,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3867,6 +3944,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4031,6 +4109,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4042,6 +4121,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4114,6 +4194,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4125,6 +4206,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4208,6 +4290,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4219,6 +4302,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4302,6 +4386,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4313,6 +4398,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4432,6 +4518,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4443,6 +4530,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4526,6 +4614,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4537,6 +4626,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4599,7 +4689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8720030308042927625}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.14, y: -3.73, z: 0}
+  m_LocalPosition: {x: 26, y: 13.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3379862422687557173}
@@ -4620,6 +4710,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4631,6 +4722,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4716,6 +4808,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4727,6 +4820,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4810,6 +4904,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4821,6 +4916,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4949,15 +5045,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.1
+      value: 9.94
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.7
+      value: 18.78
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5019,16 +5125,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &7426781895332905817 stripped
@@ -5048,6 +5144,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5119,16 +5225,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &7043269062912557008 stripped
@@ -5148,6 +5244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5203,11 +5304,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -5324,6 +5420,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5393,16 +5499,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -5609,6 +5705,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5679,16 +5785,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &8136094364212749176 stripped
@@ -5708,6 +5804,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5779,16 +5885,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &9149447842848335226 stripped
@@ -5808,6 +5904,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5879,16 +5985,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &9074248720381989285 stripped
@@ -5908,6 +6004,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -5978,16 +6084,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1687746
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -6104,6 +6200,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6173,16 +6279,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -6364,15 +6460,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.63
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.67
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -6433,16 +6539,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1687746
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -6559,6 +6655,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6628,16 +6734,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1687688
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -6999,6 +7095,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7068,16 +7174,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -7194,6 +7290,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7248,11 +7349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -7454,6 +7550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7509,11 +7610,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &5231353128440516258 stripped
@@ -7534,15 +7630,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.22
+      value: 4.97
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.48
+      value: 16.46
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -7604,16 +7710,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &5253902956527535266 stripped
@@ -7633,6 +7729,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -7704,16 +7810,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &6274834509719927499 stripped
@@ -7733,6 +7829,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -7803,16 +7909,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1687746
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -8210,6 +8306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8264,11 +8365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -8565,6 +8661,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8634,16 +8740,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -8745,6 +8841,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8800,11 +8901,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &2341693720954873282 stripped
@@ -8825,15 +8921,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.76
+      value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.86
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -8895,16 +9001,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &3353257256419516528 stripped
@@ -8924,6 +9020,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -8995,16 +9101,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &3236167687903151149 stripped
@@ -9024,6 +9120,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -9094,16 +9200,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -9300,6 +9396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9354,11 +9455,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -9470,6 +9566,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9539,16 +9645,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -9760,15 +9856,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.82
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.29
+      value: 6.13
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -9830,16 +9936,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &4275231497146719618 stripped
@@ -9859,6 +9955,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -9930,16 +10036,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &442752527266048481 stripped
@@ -9959,6 +10055,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10029,16 +10135,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8000032
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -10140,15 +10236,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.8
+      value: 4.96
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10210,16 +10316,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &113960800576797658 stripped
@@ -10239,6 +10335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10294,11 +10395,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
@@ -10400,6 +10496,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectPointPlug
       objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
+      objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10455,11 +10556,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &973866909252689391 stripped
@@ -10479,6 +10575,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10550,16 +10656,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &762734126180917999 stripped
@@ -10579,6 +10675,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10650,16 +10756,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &619735356191124056 stripped
@@ -10679,6 +10775,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10735,11 +10836,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &642965499954052775 stripped
@@ -10759,6 +10855,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 204
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10830,16 +10936,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8000032
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 204
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &1380746751188083710 stripped
@@ -10859,6 +10955,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: SocketStageIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 203
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -10930,16 +11036,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1687746
       objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: SocketStageIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 203
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
 --- !u!4 &1333295632461980869 stripped
@@ -10959,6 +11055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ConnectPointPlug
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
+        type: 3}
+      propertyPath: ConnectIndex
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 7422768001266586003, guid: f01bd33aaa133c14c87e538cff383c05,
         type: 3}
@@ -11014,11 +11115,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6302533930182617315, guid: f01bd33aaa133c14c87e538cff383c05,
-        type: 3}
-      propertyPath: ConnectIndex
-      value: 102
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01bd33aaa133c14c87e538cff383c05, type: 3}
