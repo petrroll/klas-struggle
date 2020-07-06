@@ -13,18 +13,6 @@ namespace Assets.Scripts.KlasStruggle.Persistent
     /// </summary>
     public class FireBaseConnector
     {
-        //
-        // NOTE: Could/Should be reworked to use RealtimeDatabse/CloudStorage.
-        // + Native Unity SDK.
-        // + Meant for similar usecases.
-        // - Not JSON native (just a bit more work to handle files, rows).
-        //
-        // Other opportunities:
-        // * Firebase Auth: Authentication to identify "your" wheats (?) && mitigate bad actors.
-        // * Notify when another user adds wheat to field -> grows on your field as well (? Cloud functions || ? polling).
-        //   * Semi-relatime view of field other than one snapshot -> handles race conditions of 2 whats on 1 spot.
-        //
-
         private bool _inited = false;
         private Firebase fbRoot;
 
