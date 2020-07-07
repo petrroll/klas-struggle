@@ -1,4 +1,4 @@
-﻿# Notes for future us
+# Notes for future us
 
 ## FireBaseConnector.cs
 Could/Should be reworked to use RealtimeDatabse/CloudStorage.
@@ -13,7 +13,7 @@ Could/Should be reworked to use RealtimeDatabse/CloudStorage.
 
 ## Async/Await
 Migrate all custom .NET's `Task` based `async`/`await` to [UnityAsync](https://github.com/muckSponge/UnityAsync) or [UniTask](https://github.com/Cysharp/UniTask).
-- \+ No allocation ([no longer] relevant on Unity 2018?](https://github.com/Demigiant/dotween/issues/387#issuecomment-608371554)).
+- \+ No allocation ([no longer](https://github.com/Demigiant/dotween/issues/387#issuecomment-608371554) relevant in Unity 2018?).
 - \+ UniTask: integration with DOTween ([no longer relevant?](https://github.com/Demigiant/dotween/issues/387)).
 - \- More third party code, it works fine now.
 - \- Performance is currently not an issue.
