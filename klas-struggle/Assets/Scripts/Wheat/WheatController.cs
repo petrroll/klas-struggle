@@ -104,14 +104,11 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         /// </summary>
         void SetActiveObject(List<GameObject> objects, int activatedObjIndex)
         {
+            // allign activated stage
             if (activatedObjIndex >= 0)
             {
                 var activatedObject = objects[activatedObjIndex];
                 AllignObjectsPlugWithPreviouslyActiveSocket(activatedObject);
-                foreach (var animation in activatedObject.GetComponentsInChildren<AnimationPoint>(includeInactive: false))
-                {
-                    animation.StartAnimation();
-                }
             }
 
             // enable activeObject from `objects` (current stage objects) and hide all other ones
@@ -128,6 +125,12 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                     {
                         objects[i].gameObject.SetFadeChildrenTextsAndSprites(0, includeInactive: false);
                         objects[i].gameObject.DOFadeChildrenTextsAndSprites(1, 3, includeInactive: false);
+
+                        // need to activate animation after object has been activated
+                        foreach (var animation in objects[i].GetComponentsInChildren<AnimationPoint>(includeInactive: false))
+                        {
+                            animation.StartAnimation();
+                        }
                     }
                     else if (!activeNow && activePreviously)
                     {

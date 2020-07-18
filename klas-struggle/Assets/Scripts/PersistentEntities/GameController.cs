@@ -21,6 +21,9 @@ namespace Assets.Scripts.KlasStruggle.Persistent
 
         public GameController()
         {
+            // TODO: Just for debug:
+            Random.InitState(42);
+
             FireBaseConnector = new FireBaseConnector();
             DataStorage = new DataStorage();
         }
