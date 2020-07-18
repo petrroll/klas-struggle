@@ -1378,11 +1378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: 0.2, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!1 &142659901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,11 +1510,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: 0.01, y: -0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!212 &359654445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3016,7 +3016,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.895811
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4445,11 +4445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: -0.2, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!1 &816152937
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,11 +4545,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: -0.2, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!4 &872788339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737862542896887473, guid: de7282bbb27079541aa3cc9e50478614,
@@ -4733,7 +4733,7 @@ PrefabInstance:
     - target: {fileID: 6277236669677317641, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.20870435
+      value: -0.42935336
       objectReference: {fileID: 0}
     - target: {fileID: 6277236669677317641, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
@@ -4748,7 +4748,7 @@ PrefabInstance:
     - target: {fileID: 6277236669677317641, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.9897501
+      value: 3.4310482
       objectReference: {fileID: 0}
     - target: {fileID: 6406073664637262926, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
@@ -4964,11 +4964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: 0.01, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!212 &1043575806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5465,7 +5465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362483150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.37, z: 50}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 2.5, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5566,11 +5566,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: -0.2, y: -0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!224 &1392001449 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2737862543451785705, guid: de7282bbb27079541aa3cc9e50478614,
@@ -5684,11 +5684,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: 0.2, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!1 &1484013266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6028,11 +6028,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: 0.2, y: -0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!1 &1681688635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6678,11 +6678,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueStopMotion: 1
-  StepTime: 0.2
-  StepCount: 15
+  StepTime: 0.1
+  StepCount: 30
   StepDiff: {x: -0.2, y: 0.2}
   StepFadeOutStart: 4
-  FadeOutTime: 1
+  FadeOutTime: 2
 --- !u!21 &1784111909
 Material:
   serializedVersion: 6

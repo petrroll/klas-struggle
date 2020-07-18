@@ -440,10 +440,10 @@ MonoBehaviour:
   CreateOtherWheats: 1
   D_ForceWaitUntilDownloadOtherWheatsFromFirebase: 1
   UnzoomToSizeRoot: 30
-  UnzoomTimeRoot: 2
-  UnoomWait: 5
+  UnzoomTimeRoot: 20
+  UnoomWait: 3
   UnzoomCoefInitial: 3
-  UnzoomTimeInit: 3
+  UnzoomTimeInit: 4
 --- !u!1001 &557029106
 PrefabInstance:
   m_ObjectHideFlags: 0
