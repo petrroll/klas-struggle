@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.KlasStruggle.Wheat
 {
-    public class Animation : MonoBehaviour
+    public class AnimationPoint : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

@@ -108,7 +108,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
             {
                 var activatedObject = objects[activatedObjIndex];
                 AllignObjectsPlugWithPreviouslyActiveSocket(activatedObject);
-                foreach (var animation in activatedObject.GetComponentsInChildren<Animation>(includeInactive: false))
+                foreach (var animation in activatedObject.GetComponentsInChildren<AnimationPoint>(includeInactive: false))
                 {
                     animation.StartAnimation();
                 }
