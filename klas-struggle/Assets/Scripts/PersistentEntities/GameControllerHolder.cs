@@ -10,13 +10,15 @@ namespace Assets.Scripts.KlasStruggle.Persistent
         public GameController Controller;
         public bool LazyDownloadWheatsOnInit = true;
         public bool ForceStatesFromOffline = false;
-        public 
+
+        [Tooltip("Sets seed to 42 for debugging/reproducibility purposes.")]
+        public bool StableRNGSeed = true;
 
         // Start is called before the first frame update
         void Start()
         {
             Controller = GameController.Get;
-            _ = Controller.InitAsync(LazyDownloadWheatsOnInit, ForceStatesFromOffline);
+            _ = Controller.InitAsync(LazyDownloadWheatsOnInit, ForceStatesFromOffline, StableRNGSeed);
         }
     }
 }

@@ -21,18 +21,16 @@ namespace Assets.Scripts.KlasStruggle.Persistent
 
         public GameController()
         {
-            // TODO: Just for debug:
-            Random.InitState(42);
-
             FireBaseConnector = new FireBaseConnector();
             DataStorage = new DataStorage();
         }
 
-        public async Task InitAsync(bool downloadWheatsOnInit, bool forceStatesFromOffline)
+        public async Task InitAsync(bool downloadWheatsOnInit, bool forceStatesFromOffline, bool stableRngSeed)
         {
             if (_inited) { return; }
             _inited = true;
 
+            if (stableRngSeed) { Random.InitState(42); }
             if (downloadWheatsOnInit) { await this.GetOtherWheatStatesAsync(forceStatesFromOffline); }
         }
 
