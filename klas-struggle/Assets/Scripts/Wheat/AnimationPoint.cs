@@ -11,9 +11,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
 
         public void StartAnimation()
         {
-            Debug.Log("preAnim");
             StartCoroutine(nameof(Animate));
-            Debug.Log("poAnim");
         }
 
         IEnumerator Animate()
