@@ -15,39 +15,20 @@ namespace Assets.Scripts.AnimsEtc
         public int StepFadeOutStart = -1;
         public float FadeOutTime = 2.0f;
 
-        private int coroutineStep = 0;
-        private Vector3 currentPosition;
-
-
-        void Start()
-        {
-            currentPosition = transform.position;
-        }
-
         public IEnumerator MakeMotion()
         {
-
-            Debug.Log("MakeMotion");
-            while (ContinueStopMotion)
+            for (int coroutineStep = 0; coroutineStep <= StepCount; coroutineStep++)
             {
-                Debug.Log($"MakeMotion: {coroutineStep}");
-
                 if (coroutineStep == StepFadeOutStart)
                 {
                     gameObject.DOFadeChildrenSprites(0.0f, FadeOutTime, false);
                 }
 
-                if (coroutineStep <= StepCount) 
-                { 
-                    currentPosition.y += StepDiff.y; 
-                    currentPosition.x += StepDiff.x; 
-                    
-                    transform.position = currentPosition; 
-                    Debug.Log($"MakeMotion: {transform.position}"); 
-                }
-                else { ContinueStopMotion = false; }
+                var currentPosition = transform.position;
+                currentPosition.y += StepDiff.y;
+                currentPosition.x += StepDiff.x;
+                transform.position = currentPosition;
 
-                coroutineStep++;
                 yield return new WaitForSeconds(StepTime);
             }
         }
