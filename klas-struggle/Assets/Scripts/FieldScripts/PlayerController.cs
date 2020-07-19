@@ -26,13 +26,16 @@ namespace Assets.Scripts.KlasStruggle.Field
         private bool _rooted = false;
         BoxCollider2D _boxCollider2D = null;
         private bool? _collisionIndicatorWasVisible = null;
+        private bool _enableCollisionIndicator = false;
 
-      
         public float UnzoomToSizeRoot = 10;
         public float UnzoomTimeRoot = 2.5f;
         public float UnoomWait = 1f;
         public float UnzoomCoefInitial = 10;
         public float UnzoomTimeInit = 5f;
+
+        public float CollisionIndicatorOnTime = 1f;
+        public float CollisionIndicatorOffTime = 1f;
 
         private GameController gameController;
         private MoveController moveController;
@@ -87,6 +90,9 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             _inited = true; 
             moveController.enableMovement = true;
+
+            _enableCollisionIndicator = true;
+            UpdateCollisionIndicator(); // Need to force reevaluation of collision detection now that it's enabled, doesn't happen automatically otherwise
         }
 
         private async Task RootWheatAsync()
@@ -151,18 +157,24 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             bool isInCollision = IsInCollision();
 
-            if (isInCollision && _collisionIndicatorWasVisible != true && !_rooted) { _collisionIndicatorWasVisible = true; TurnCollisionIndicatorOn(); }
+            if (isInCollision && _collisionIndicatorWasVisible != true && !_rooted && _enableCollisionIndicator) { _collisionIndicatorWasVisible = true; TurnCollisionIndicatorOn(); }
             else if (!isInCollision && _collisionIndicatorWasVisible != false) { _collisionIndicatorWasVisible = false; TurnCollisionIndicatorOff(); }
         }
 
         private void TurnCollisionIndicatorOn()
         {
-            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.red;}
+            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
+            { 
+                RendererRef.DOColor(Color.red, CollisionIndicatorOnTime);
+            }
         }
 
         private void TurnCollisionIndicatorOff()
         {
-            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.white;}
+            foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
+            {
+                RendererRef.DOColor(Color.white, CollisionIndicatorOffTime);
+            }
         }
 
         public void OnTriggerEnter2D(Collider2D _)
