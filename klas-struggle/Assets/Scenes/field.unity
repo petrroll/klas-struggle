@@ -768,7 +768,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.895811
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -920,6 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LazyDownloadWheatsOnInit: 0
   ForceStatesFromOffline: 0
+  StableRNGSeed: 1
 --- !u!4 &1438969425
 Transform:
   m_ObjectHideFlags: 0
