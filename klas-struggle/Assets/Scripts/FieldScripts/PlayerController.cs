@@ -83,12 +83,9 @@ namespace Assets.Scripts.KlasStruggle.Field
             var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
 
             // finish init after animations (assume all take the same amount of time) complete
-            tweener.OnComplete(InitComplete);
-        }
+            await tweener.Await();
 
-        private void InitComplete()
-        {
-            _inited = true; 
+            _inited = true;
             moveController.enableMovement = true;
 
             _enableCollisionIndicator = true;
