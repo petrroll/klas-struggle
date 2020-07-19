@@ -151,16 +151,16 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             bool isInCollision = IsInCollision();
 
-            if (isInCollision && _collisionIndicatorWasVisible != true && !_rooted) { _collisionIndicatorWasVisible = true; PaintRed(); }
-            else if (!isInCollision && _collisionIndicatorWasVisible != false) { _collisionIndicatorWasVisible = false; PaintWhite(); }
+            if (isInCollision && _collisionIndicatorWasVisible != true && !_rooted) { _collisionIndicatorWasVisible = true; TurnCollisionIndicatorOn(); }
+            else if (!isInCollision && _collisionIndicatorWasVisible != false) { _collisionIndicatorWasVisible = false; TurnCollisionIndicatorOff(); }
         }
 
-        private void PaintRed()
+        private void TurnCollisionIndicatorOn()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.red;}
         }
 
-        private void PaintWhite()
+        private void TurnCollisionIndicatorOff()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) { RendererRef.color = Color.white;}
         }
