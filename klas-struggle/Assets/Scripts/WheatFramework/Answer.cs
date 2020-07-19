@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Utils;
+using UnityEngine;
 
 namespace Assets.Scripts.WheatFramework
 {
@@ -15,6 +16,9 @@ namespace Assets.Scripts.WheatFramework
 
         public void OnMouseDown() => SelectCurrentAnswer();
         public void OnCollisionEnter2D(Collision2D _) => SelectCurrentAnswer();
+
+        [Tooltip("Overrides the fade-out animation started by QuestionStage.FinishStageAsync that is shared among all (even non-selected) answers.")]
+        public bool CustomSelectedAnimation = false;
         
         public void Update()
         {
@@ -40,6 +44,16 @@ namespace Assets.Scripts.WheatFramework
         {
             Debug.Assert(Question.Id != -1 && Id != -1, $"Answers selected but not initialized Q:{Question.Id}, A:{Id}.");
             if (Question.Stage.ReadyForAnswers) { _ = Decision.DecideAsync(this); } // Selects answer only when current stage is ready for answers (e.g. is not finishing).
+
+            if (CustomSelectedAnimation)
+            {
+                // FIX (ugly hack): The Decision.DecideAsync->CurrentStage.FinishStageAsync->gameObject.DOFadeChildrenTextsAndSprites(0, ..) starts DOFade for all children
+                // ..including the selected answer. If we want to override that and provide shorter/longer/different animation for the text of the selected answer than what
+                // ..we generally have for the not-selected ones we need to kill all of its tweens first & then start new ones.
+                int killedTweens = this.gameObject.DOKillInChildrenTextAndSprites();
+                Debug.Assert(killedTweens != 1, $"Selected answer animation is replacing way too many/zero previously running tweens: {killedTweens}.");
+                // ... implement custom animation (e.g. slower fadout, ...)
+            }
         }
 
         private void InitAnswerKey(int answerID)

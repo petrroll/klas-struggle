@@ -75,5 +75,24 @@ namespace Assets.Scripts.Utils
             SetFadeChildrenTexts(go, value, includeInactive);
             SetFadeChildrenSprites(go, value, includeInactive);
         }
+
+        public static int DOKillInChildrenTextAndSprites(this GameObject go, bool includeInactive = true)
+        {
+            int killedTweens = 0;
+
+            var tmpObjs = go.GetComponentsInChildren<TextMeshPro>(includeInactive);
+            foreach (var tmp in tmpObjs)
+            {
+                killedTweens += DOTween.Kill(tmp);
+            }
+
+            var spriteObjs = go.GetComponentsInChildren<SpriteRenderer>(includeInactive);
+            foreach (var sprite in spriteObjs)
+            {
+                killedTweens += DOTween.Kill(sprite);
+            }
+
+            return killedTweens;
+        }
     }
 }
