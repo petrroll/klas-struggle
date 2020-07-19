@@ -53,7 +53,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             // initialize variables for collision warning
             _boxCollider2D = this.GetComponent<BoxCollider2D>();
 
-            // update collision indicator -> show it if we can't root on intial location
+            // update collision indicator -> show it if we can't root on initial location
             // TODO: Have different system for showing the initial can't root to `can't root due to collision with other wheat`?
             wheatSpriteRenderers = GenWheat.GetComponentsInChildren<SpriteRenderer>();
             UpdateCollisionIndicator();
@@ -75,11 +75,11 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             await Task.Delay(Convert.ToInt32(1000 * 0.3f));
 
-            // incrase scale of generated wheat to create illusion of it growing
+            // increase scale of generated wheat to create illusion of it growing
             var newScale = GenWheat.transform.localScale * UnzoomCoefInitial;
             var tweener = GenWheat.transform.DOScale(newScale, UnzoomTimeInit);
 
-            // finish init after animations (asume all take the same amount of time) complete
+            // finish init after animations (assume all take the same amount of time) complete
             tweener.OnComplete(InitComplete);
         }
 
@@ -142,7 +142,7 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // we explicitely don't want to await
+                // we explicitly don't want to await
                 if (!_rooted && _inited && !IsInCollision()) { _ = RootWheatAsync(); _rooted = true; }
             }
         }
