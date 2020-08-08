@@ -38,7 +38,7 @@ namespace Assets.Scripts.WheatFramework
                 if (FadeIn) // set alpha to 0 -> slowly move to 1
                 {
                     this.gameObject.SetFadeChildrenTextsAndSprites(0); 
-                    this.gameObject.DOFadeChildrenTextsAndSprites(endValue: 1, FadeInTime);
+                    this.gameObject.DOFadeChildrenTexts(endValue: 1, FadeInTime, true);
                 }
             }
         }

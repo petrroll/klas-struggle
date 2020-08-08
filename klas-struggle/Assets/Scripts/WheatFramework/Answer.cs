@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Utils;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.WheatFramework
@@ -14,8 +15,15 @@ namespace Assets.Scripts.WheatFramework
 
         internal KeyCode AnswerKey;
 
+        //public Transform MOAnimationTransform;
+
         public void OnMouseDown() => SelectCurrentAnswer();
         public void OnCollisionEnter2D(Collision2D _) => SelectCurrentAnswer();
+
+        //MouseOver animation initialization and check
+        public void OnMouseEnter() => ShowMouseOver();
+        public void OnMouseExit() => HideMouseOver();
+
 
         [Tooltip("Overrides the fade-out animation started by QuestionStage.FinishStageAsync that is shared among all (even non-selected) answers.")]
         public bool CustomSelectedAnimation = false;
@@ -37,7 +45,27 @@ namespace Assets.Scripts.WheatFramework
 
             Decision = dec;
             InitAnswerKey(answerID);
+
+            
         }
+
+    public void ShowMouseOver()
+    {
+        SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
+            MouseOverAnimation.DOFade(1f, 0.5f);
+            // var answerTextBounds = GetComponent<TextMeshPro>().bounds.center;
+            //GetComponent<TextMeshPro>().ForceMeshUpdate();
+            //Vector3 MouseOverAnimationPosition = MOAnimationTransform.position;
+            //MOAnimationTransform.position = answerTextBounds;
+            //Debug.Log(answerTextBounds);
+
+        }
+
+        public void HideMouseOver()
+    {
+            SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
+            MouseOverAnimation.DOFade(0f, 0.5f);
+    }
 
 
         private void SelectCurrentAnswer()
