@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeOutTime: 3
+  EnableFadeOut: 0
 --- !u!1 &184679633
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1976850002}
   GenWheat: {fileID: 557029107}
+  FadeOutFieldTutorial: {fileID: 44091118}
   Cam: {fileID: 1106636968}
   SendState: 0
   CreateOtherWheats: 1

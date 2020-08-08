@@ -67,7 +67,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
             // update the scale of collider depending on generated wheat's size
-            _boxCollider2D.transform.localScale = new Vector3(GenWheat.State.Size, GenWheat.State.Size);
+            _boxCollider2D.transform.localScale *= GenWheat.State.Size;
 
             // do animations and finish init
             _ = RescaleWheatUnzoomToFieldAndFinishInit();
