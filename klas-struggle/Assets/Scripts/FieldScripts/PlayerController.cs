@@ -167,8 +167,11 @@ namespace Assets.Scripts.KlasStruggle.Field
         private void TurnCollisionIndicatorOn()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
-            { 
-                RendererRef.DOColor(Color.red, CollisionIndicatorOnTime);
+            {
+
+                Color collisionColor = new Color(0.5f, 0.5f, 0.5f);
+                RendererRef.DOColor(collisionColor, CollisionIndicatorOnTime);
+                Utils.FadableExt.DOFade(RendererRef, 0.5f, CollisionIndicatorOnTime);
             }
         }
 
