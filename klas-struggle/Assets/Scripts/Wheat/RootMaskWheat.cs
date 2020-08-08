@@ -11,7 +11,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         void Start()
         {
             spriteMask = gameObject.GetComponent<SpriteMask>();
-            spriteMask.gameObject.SetActive(spriteMask);
+            spriteMask.gameObject.SetActive(MaskedByDefault);
         }
 
         public void SetActive(bool active = true) => spriteMask.gameObject.SetActive(active);

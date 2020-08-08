@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -501,6 +502,11 @@ PrefabInstance:
     - target: {fileID: 2032511461363622085, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
       propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784559981432903658, guid: d1137bc207dfe0f438b8888c9e1de96b,
+        type: 3}
+      propertyPath: MaskedByDefault
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5877190658959688870, guid: d1137bc207dfe0f438b8888c9e1de96b,
@@ -1047,6 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeOutTime: 3
+  EnableFadeOut: 0
 --- !u!114 &1630971148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,6 +1069,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

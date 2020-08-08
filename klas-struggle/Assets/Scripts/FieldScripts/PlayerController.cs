@@ -100,6 +100,9 @@ namespace Assets.Scripts.KlasStruggle.Field
 
         private async Task RootWheatAsync()
         {
+            // activate rooted mask for root sprites
+            GenWheat.GetComponentInChildren<RootMaskWheat>(includeInactive: true)?.SetActive(true);
+
             // freeze generated wheat movement
             wheatFollowController.enabled = false;
 

@@ -4615,6 +4615,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2784559981432903658, guid: d1137bc207dfe0f438b8888c9e1de96b,
+        type: 3}
+      propertyPath: MaskedByDefault
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3289315037632315066, guid: d1137bc207dfe0f438b8888c9e1de96b,
         type: 3}
       propertyPath: m_IsActive
@@ -5131,6 +5136,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
