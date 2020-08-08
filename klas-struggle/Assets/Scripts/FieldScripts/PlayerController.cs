@@ -36,6 +36,9 @@ namespace Assets.Scripts.KlasStruggle.Field
         public float UnzoomCoefInitial = 10;
         public float UnzoomTimeInit = 5f;
 
+        public int DisplacementLocalTransformYAxisRoot = -2;
+        public float DisplacementRootTime = 5f;
+
         public float CollisionIndicatorOnTime = 1f;
         public float CollisionIndicatorOffTime = 1f;
 
@@ -103,6 +106,10 @@ namespace Assets.Scripts.KlasStruggle.Field
             // activate rooted mask for root sprites
             GenWheat.GetComponentInChildren<RootMaskWheat>(includeInactive: true)?.SetActive(true);
 
+            // Start moving wheat downwards for rooting
+            var rootingDisplacement = new Vector3(0, DisplacementLocalTransformYAxisRoot);
+            GenWheat.transform.DOLocalMove(GenWheat.transform.position + rootingDisplacement, DisplacementRootTime);
+
             // freeze generated wheat movement
             wheatFollowController.enabled = false;
 
@@ -111,7 +118,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             // save current location to state and potentially send state
             // send state only when the other wheats came from firebase (-> reasonably sure there're no conflicts)
-            GenWheat.SaveLoc();
+            GenWheat.SaveLoc(rootingDisplacement);
             if (SendState && _otherWheatsDownloaded) { await gameController.FireBaseConnector.PushStateToFirebaseAsync(GenWheat.State); }
         }
 
