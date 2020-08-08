@@ -28,13 +28,13 @@ namespace Assets.Scripts.Utils
             }
         }
 
-        public static void DOFadeChildrenSprites(this GameObject go, float endValue, float duration, bool includeInactive)
+        public static void DOFadeChildrenSprites(this GameObject go, float endValue, float duration, bool includeInactive, float delay = 0)
         {
             var sprites = go.GetComponentsInChildren<SpriteRenderer>(includeInactive);
 
             foreach (var sprite in sprites)
             {
-                sprite.DOFade(endValue, duration);
+                sprite.DOFade(endValue, duration).SetDelay(delay);
             }
         }
 
@@ -45,13 +45,13 @@ namespace Assets.Scripts.Utils
 
         public static void SetFade(this TextMeshPro target, float value) => target.alpha = value;
 
-        public static void DOFadeChildrenTexts(this GameObject go, float endValue, float duration, bool includeInactive)
+        public static void DOFadeChildrenTexts(this GameObject go, float endValue, float duration, bool includeInactive, float delay = 0)
         {
             var objs = go.GetComponentsInChildren<TextMeshPro>(includeInactive);
 
             foreach (var obj in objs)
             {
-                obj.DOFade(endValue, duration);
+                obj.DOFade(endValue, duration).SetDelay(delay);
             }
         }
 
@@ -64,10 +64,10 @@ namespace Assets.Scripts.Utils
             }
         }
 
-        public static void DOFadeChildrenTextsAndSprites(this GameObject go, float endValue, float duration, bool includeInactive = true)
+        public static void DOFadeChildrenTextsAndSprites(this GameObject go, float endValue, float duration, bool includeInactive = true, float delay = 0)
         {
-            DOFadeChildrenTexts(go, endValue, duration, includeInactive);
-            DOFadeChildrenSprites(go, endValue, duration, includeInactive);
+            DOFadeChildrenTexts(go, endValue, duration, includeInactive, delay);
+            DOFadeChildrenSprites(go, endValue, duration, includeInactive, delay);
         }
 
         public static void SetFadeChildrenTextsAndSprites(this GameObject go, float value, bool includeInactive = true)

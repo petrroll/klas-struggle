@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2737862543451785708}
   - component: {fileID: 2737862543451785711}
   - component: {fileID: 2737862543451785710}
+  - component: {fileID: 4013381379138219246}
   m_Layer: 0
   m_Name: AnswerA
   m_TagString: Untagged
@@ -372,8 +373,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0907d3049427542b41dd9ada5b3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOAnimationTransform: {fileID: 8104790834430206590}
-  CustomSelectedAnimation: 0
+  CustomSelectedAnimation: 1
+--- !u!114 &4013381379138219246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737862543451785704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1000eda6949931748bbd636796c466f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2737862543881460702
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +401,7 @@ GameObject:
   - component: {fileID: 2737862543881460706}
   - component: {fileID: 2737862543881460701}
   - component: {fileID: 2737862543881460700}
+  - component: {fileID: 2931762573835514563}
   m_Layer: 0
   m_Name: AnswerB
   m_TagString: Untagged
@@ -621,8 +634,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0907d3049427542b41dd9ada5b3005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOAnimationTransform: {fileID: 988655103707747495}
-  CustomSelectedAnimation: 0
+  CustomSelectedAnimation: 1
+--- !u!114 &2931762573835514563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2737862543881460702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1000eda6949931748bbd636796c466f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2787537290453407593
 GameObject:
   m_ObjectHideFlags: 0

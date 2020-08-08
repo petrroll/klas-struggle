@@ -20,10 +20,6 @@ namespace Assets.Scripts.WheatFramework
         public void OnMouseDown() => SelectCurrentAnswer();
         public void OnCollisionEnter2D(Collision2D _) => SelectCurrentAnswer();
 
-        //MouseOver animation initialization and check
-        public void OnMouseEnter() => ShowMouseOver();
-        public void OnMouseExit() => HideMouseOver();
-
 
         [Tooltip("Overrides the fade-out animation started by QuestionStage.FinishStageAsync that is shared among all (even non-selected) answers.")]
         public bool CustomSelectedAnimation = false;
@@ -47,25 +43,6 @@ namespace Assets.Scripts.WheatFramework
             InitAnswerKey(answerID);          
         }
 
-        public void ShowMouseOver()
-        {
-            SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
-            MouseOverAnimation.DOFade(1f, 0.5f);
-
-            // there's only one TextMeshPro in an answer
-            //var answerTextBounds = GetComponent<TextMeshPro>().bounds.center;
-            //GetComponent<TextMeshPro>().ForceMeshUpdate();
-            //Vector3 MouseOverAnimationPosition = MOAnimationTransform.position;
-            //MOAnimationTransform.position = answerTextBounds;
-            //Debug.Log(answerTextBounds);
-        }
-
-        public void HideMouseOver()
-        {
-            SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
-            MouseOverAnimation.DOFade(0f, 0.5f);
-        }
-
         private void SelectCurrentAnswer()
         {
             Debug.Assert(Question.Id != -1 && Id != -1, $"Answers selected but not initialized Q:{Question.Id}, A:{Id}.");
@@ -79,6 +56,7 @@ namespace Assets.Scripts.WheatFramework
                 int killedTweens = this.gameObject.DOKillInChildrenTextAndSprites();
                 Debug.Assert(killedTweens != 1, $"Selected answer animation is replacing way too many/zero previously running tweens: {killedTweens}.");
                 // ... implement custom animation (e.g. slower fadout, ...)
+                this.gameObject.DOFadeChildrenTextsAndSprites(endValue: 0, duration: 2, delay: 1);
             }
         }
 

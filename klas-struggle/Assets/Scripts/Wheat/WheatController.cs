@@ -87,7 +87,7 @@ namespace Assets.Scripts.KlasStruggle.Wheat
                     ApplyStageResult(stageIndex);
                     break;
                 case 5:
-                    float newSize = 1 + (answer.Id + answer.Question.Id) / 10f;
+                    float newSize = 1 + (answer.Id + answer.Question.Id) / 8f;
                     State.Size = newSize;
                     ApplySize();
                     break;

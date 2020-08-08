@@ -50,7 +50,7 @@ namespace Assets.Scripts.WheatFramework
             if (FadeIn) // fade out, alpha should already be at 1 -> fade to 0
             {
                 this.gameObject.DOFadeChildrenTextsAndSprites(0, FadeOutTime);
-                await Task.Delay(Convert.ToInt32(1000 * FadeOutTime));
+                await Task.Delay(Convert.ToInt32(1000 * FadeOutTime + 2 * 1000));
             }
 
             // disable current stage's gameObject and activate next stage 

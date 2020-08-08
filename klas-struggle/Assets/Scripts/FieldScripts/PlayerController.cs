@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.KlasStruggle.Persistent;
+﻿using Assets.Scripts.AnimsEtc;
+using Assets.Scripts.KlasStruggle.Persistent;
 using Assets.Scripts.KlasStruggle.Wheat;
 using Assets.Scripts.Movement;
 using Assets.Scripts.Utils;
@@ -13,6 +14,7 @@ namespace Assets.Scripts.KlasStruggle.Field
     {
         public WheatController Prefab = null;
         public WheatController GenWheat = null;
+        public FadeOutFieldTutorial FadeOutFieldTutorial = null;
 
         public Camera Cam = null;
 
@@ -64,6 +66,9 @@ namespace Assets.Scripts.KlasStruggle.Field
             // explicitly don't want to await
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
+            // update the scale of collider depending on generated wheat's size
+            _boxCollider2D.transform.localScale = new Vector3(GenWheat.State.Size, GenWheat.State.Size);
+
             // do animations and finish init
             _ = RescaleWheatUnzoomToFieldAndFinishInit();
         }
@@ -87,6 +92,7 @@ namespace Assets.Scripts.KlasStruggle.Field
 
             _inited = true;
             moveController.enableMovement = true;
+            FadeOutFieldTutorial.EnableFadeOut = true;
 
             _enableCollisionIndicator = true;
             UpdateCollisionIndicator(); // Need to force reevaluation of collision detection now that it's enabled, doesn't happen automatically otherwise
