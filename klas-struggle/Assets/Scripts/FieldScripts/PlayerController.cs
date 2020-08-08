@@ -179,6 +179,7 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
             {
+                //Includes Alpha fadein to 1
                 RendererRef.DOColor(Color.white, CollisionIndicatorOffTime);
             }
         }
