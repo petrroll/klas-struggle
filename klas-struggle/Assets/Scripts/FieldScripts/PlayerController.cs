@@ -67,7 +67,7 @@ namespace Assets.Scripts.KlasStruggle.Field
             if (CreateOtherWheats) { _ = InstantiateOtherWheatsAsync(); }
 
             // update the scale of collider depending on generated wheat's size
-            _boxCollider2D.transform.localScale = new Vector3(GenWheat.State.Size, GenWheat.State.Size);
+            _boxCollider2D.transform.localScale *= GenWheat.State.Size;
 
             // do animations and finish init
             _ = RescaleWheatUnzoomToFieldAndFinishInit();
@@ -167,8 +167,11 @@ namespace Assets.Scripts.KlasStruggle.Field
         private void TurnCollisionIndicatorOn()
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
-            { 
-                RendererRef.DOColor(Color.red, CollisionIndicatorOnTime);
+            {
+
+                Color collisionColor = new Color(0.5f, 0.5f, 0.5f);
+                RendererRef.DOColor(collisionColor, CollisionIndicatorOnTime);
+                Utils.FadableExt.DOFade(RendererRef, 0.5f, CollisionIndicatorOnTime);
             }
         }
 
@@ -176,6 +179,7 @@ namespace Assets.Scripts.KlasStruggle.Field
         {
             foreach (SpriteRenderer RendererRef in wheatSpriteRenderers) 
             {
+                //Includes Alpha fadein to 1
                 RendererRef.DOColor(Color.white, CollisionIndicatorOffTime);
             }
         }
