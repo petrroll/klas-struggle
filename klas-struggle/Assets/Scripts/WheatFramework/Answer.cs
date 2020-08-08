@@ -44,29 +44,27 @@ namespace Assets.Scripts.WheatFramework
             Id = answerID;
 
             Decision = dec;
-            InitAnswerKey(answerID);
-
-            
+            InitAnswerKey(answerID);          
         }
 
-    public void ShowMouseOver()
-    {
-        SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
-            MouseOverAnimation.DOFade(1f, 0.5f);
-            // var answerTextBounds = GetComponent<TextMeshPro>().bounds.center;
-            //GetComponent<TextMeshPro>().ForceMeshUpdate();
-            //Vector3 MouseOverAnimationPosition = MOAnimationTransform.position;
-            //MOAnimationTransform.position = answerTextBounds;
-            //Debug.Log(answerTextBounds);
+        public void ShowMouseOver()
+        {
+            SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
+            MouseOverAnimation.DOFade(1f, 0.5f);¨
 
+            // there's only one TextMeshPro in an answer
+            var answerTextBounds = GetComponent<TextMeshPro>().bounds.center;
+            GetComponent<TextMeshPro>().ForceMeshUpdate();
+            Vector3 MouseOverAnimationPosition = MOAnimationTransform.position;
+            MOAnimationTransform.position = answerTextBounds;
+            Debug.Log(answerTextBounds);
         }
 
         public void HideMouseOver()
-    {
+        {
             SpriteRenderer MouseOverAnimation = GetComponentInChildren<SpriteRenderer>();
             MouseOverAnimation.DOFade(0f, 0.5f);
-    }
-
+        }
 
         private void SelectCurrentAnswer()
         {
