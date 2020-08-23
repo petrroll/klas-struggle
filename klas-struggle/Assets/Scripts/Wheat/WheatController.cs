@@ -192,8 +192,11 @@ namespace Assets.Scripts.KlasStruggle.Wheat
         void SetStateStageAnswer(int stageIndex, int answerId) 
             => GetStateSageAnswer(stageIndex) = answerId;
 
-        public void SaveLoc() 
-            => State.Loc = gameObject.transform.localPosition;
+        /// <summary>
+        /// Offset can be used e.g. when a DOMove Tween has been but we want to save the location before it has finished.
+        /// </summary>
+        public void SaveLoc(Vector3 offset = new Vector3()) 
+            => State.Loc = gameObject.transform.localPosition + offset;
 
         private ref int GetStateSageAnswer(int stageIndex)
         {
